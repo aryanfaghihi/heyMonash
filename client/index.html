@@ -1,104 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
+
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Web Speech API Demo</title>
-    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
-    <style>
-        * {
-            font-family: Verdana, Arial, sans-serif;
-        }
-        a:link {
-            color: #000;
-            text-decoration: none;
-        }
-        a:visited {
-            color: #000;
-        }
-        a:hover {
-            color: #33F;
-        }
-        .center {
-            padding: 10px;
-            text-align: center;
-        }
-        .final {
-            color: black;
-            padding-right: 3px;
-        }
-        .interim {
-            color: gray;
-        }
-        .right {
-            float: right;
-        }
-        #results {
-            font-size: 14px;
-            font-weight: bold;
-            border: 1px solid #ddd;
-            padding: 15px;
-            text-align: left;
-            min-height: 150px;
-        }
-        #start_button {
-            border: 0;
-        }
-        .final {
-            color: black;
-            padding-right: 3px;
-        }
 
-        .interim {
-            color: gray;
-        }
+    <title>Hey Monash</title>
 
-
-        .right {
-            float: right;
-        }
-
-
-        #results {
-            font-size: 14px;
-            font-weight: bold;
-            border: 1px solid #ddd;
-            padding: 15px;
-            text-align: left;
-            min-height: 150px;
-        }
-
-        #start_button {
-            border: 0;
-            background-color: transparent;
-            padding: 0;
-        }
-        .wrapper {
-            width: 70%;
-            margin: 0 auto;
-        }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-blue.min.css"/>
+    <link rel="stylesheet" href="/css">
+    <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
 </head>
+
 <body>
-<div class="wrapper">
-    <div class="right">
-        <button id="start_button" onclick="startButton(event)">
-            <img id="start_img" src="https://www.google.com/intl/en/chrome/assets/common/images/content/mic.gif"
-                 alt="Start"></button>
+
+    <div class="page-content">
+        <div class="header">
+            <br/>
+            <b>Hey</b>Monash
+        </div>
+
+        <!-- Conversation -->
+        <ol class="conversation">
+
+            <div class="question">
+                <div class="bubble-question" id="results">
+                    <span id="interim_span" class="interim"></span>
+                    <span id="final_span" class="final"></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="response">
+                <div class="bubble-response" id="results">
+                    <span class="final"></span>
+                    <span id="final_span_response" class="interim"></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="spinner">
+
+        </div>
+
+        </ol>
+
+        <div class="fadeout"></div>
     </div>
-    <div id="results">
-        <span id="final_span" class="final"></span>
-        <span id="interim_span" class="interim"></span>
-        <p>
+
+    <!-- Microphone button -->
+    <div class="mic" onclick="startButton(event)">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored pulse-button">
+            <i class="material-icons">mic</i>
+        </button>
     </div>
-    <div class="center">
 
 
-        <p>
-        <div id="div_language">
-            <select id="select_language" onchange="updateCountry()"></select>
-            &nbsp;&nbsp;
-        <select id="select_dialect"></select>
-    </div>
-    </div>
-</div>
-<script src="/js"></script>
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/js"></script>
 </body>
+</html>

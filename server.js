@@ -14,6 +14,9 @@ router.get('/', function(req, res) {
 router.get('/js', function(req, res) {
     res.sendfile('./client/voice.js');
 });
+router.get('/css', function(req, res) {
+    res.sendfile('./client/css/style.css');
+});
 api.get('/ask/:query', function(req, res) {
     console.log(req.params.query);
     var inputQuery = req.params.query.toLowerCase();
