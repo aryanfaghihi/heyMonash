@@ -18,13 +18,22 @@ module.exports = {
     },
 
     getClassLocation: function () {
-        var cLocation= "Your next class is at 5 30 PM at room G22, building 36, Rainforest Walk.Here are the directions to get there"
+        var cLocation
+        cLocation = {
+            voice: 'Your next class is at 5 30 PM at room G22, building 36, Rainforest Walk.Here are the directions to get there',
+            title: 'Schedule',
+            description: '<p>Room G22, Buliding 36</p> <p>Rainforest Walk</p>',
+            actions: [
+                "<a href='http://monash.edu'>Go to Monash page</a>"
+            ]
+        }
+        
         return cLocation
 
     },
 
     getFeesPay: function () {
-        var feesPay= "You're fees can easily be paid via the ....... site"
+        var feesPay = "You're fees can easily be paid via the ....... site"
         return feesPay
     },
 
