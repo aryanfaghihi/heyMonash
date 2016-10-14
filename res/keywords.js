@@ -113,7 +113,23 @@ module.exports = {
             response: response.getIntroRes()
 
 
+        },
+        {
+            keywords: {
+                required: [
+                    "introduce"
+                ],
+
+                alternatives: [
+                    "yourself"
+                ]
+            },
+            response: response.getIntroRes()
+
+
         }
+
+
 
 
 
