@@ -181,18 +181,20 @@ function handleResponse (response) {
     console.log(response);
     conversation.addResponse(response);
     console.log(conversation);
-    if (typeof response == "string") {
-        console.log('the response is only text');
-        speak(response);
-        $("#final_span_response").text(response);
 
-    }
-    else {
-        console.log('the response if a card!');
-        // Speak the voice part
-        speak(response.voice);
-        createCard(response);
-    }
+
+    // if (typeof response == "string") {
+    //     console.log('the response is only text');
+    //     speak(response);
+    //     $("#final_span_response").text(response);
+    //
+    // }
+    // else {
+    //     console.log('the response if a card!');
+    //     // Speak the voice part
+    //     speak(response.voice);
+    //     createCard(response);
+    // }
 }
 
 function createCard (responseData) {
