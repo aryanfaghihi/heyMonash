@@ -2,6 +2,49 @@ var final_transcript = '';
 var recognizing = false;
 var ignore_onend;
 var start_timestamp;
+conversation = {
+    history: [],
+    addQuestion: function (question) {
+        this.history.push({
+            question: question,
+            response: ''
+        });
+        var index = this.history.length;
+        this.createQuestionBubble(question, index);
+        updateScroll();
+    },
+    createQuestionBubble: function(question, index) {
+        question = capitalize(question);
+        var conversationDiv = document.getElementById('conversation');
+        var newQuestionDiv = document.createElement("div");
+        document.getElementById("ongoingQuestionDiv").remove();
+        newQuestionDiv.className="question";
+        newQuestionDiv.innerHTML = "<div class='bubble-question'><span id='final_span" + index + "'>" + question + "</span></div>";
+        conversationDiv.appendChild(newQuestionDiv);
+        updateScroll();
+    },
+    addResponse: function (response) {
+        var latestIndex = this.history.length - 1;
+        this.history[latestIndex].response = response;
+
+        this.createResponseBubble(response, latestIndex);
+
+        updateScroll();
+    },
+    createResponseBubble: function (response, index) {
+        var conversationDiv = document.getElementById('conversation');
+        var newResponseDiv = document.createElement("div");
+        newResponseDiv.className="response";
+        newResponseDiv.innerHTML = "<div class='bubble-response'><span id='final" + index + "'>" + response + "</span></div>";
+        conversationDiv.appendChild(newResponseDiv);
+        updateScroll();
+    }
+};
+// Just for us to know.
+var conversationTemplate = {
+    question: '',
+    response: ''
+};
 
 if (!('webkitSpeechRecognition' in window)) {
     console.log('USE CHROME!');
@@ -12,6 +55,12 @@ if (!('webkitSpeechRecognition' in window)) {
 
     recognition.onstart = function() {
         recognizing = true;
+        var conversationDiv = document.getElementById('conversation');
+        var ongoingQuestionDiv = document.createElement("div");
+        ongoingQuestionDiv.id = "ongoingQuestionDiv";
+        ongoingQuestionDiv.className="question";
+        ongoingQuestionDiv.innerHTML = "<div class='bubble-question'><span id='ongoingQuestion'></span></div>";
+        conversationDiv.appendChild(ongoingQuestionDiv);
     };
 
     recognition.onerror = function(event) {
@@ -39,7 +88,7 @@ if (!('webkitSpeechRecognition' in window)) {
         if (window.getSelection) {
             window.getSelection().removeAllRanges();
             var range = document.createRange();
-            range.selectNode(document.getElementById('final_span'));
+            range.selectNode(document.getElementById('ongoingQuestion'));
             window.getSelection().addRange(range);
         }
 
@@ -51,6 +100,8 @@ if (!('webkitSpeechRecognition' in window)) {
         for (var i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
                 final_transcript += event.results[i][0].transcript;
+                conversation.addQuestion(final_transcript);
+                console.log(conversation);
                 ask_server(final_transcript);
                 recognition.stop();
                 console.log(final_transcript);
@@ -58,9 +109,9 @@ if (!('webkitSpeechRecognition' in window)) {
                 interim_transcript += event.results[i][0].transcript;
             }
         }
-        final_transcript = capitalize(final_transcript);
-        final_span.innerHTML = linebreak(final_transcript);
-        interim_span.innerHTML = linebreak(interim_transcript);
+        if (document.getElementById("ongoingQuestion")) {
+            document.getElementById("ongoingQuestion").innerHTML = linebreak(interim_transcript);
+        }
         if (final_transcript || interim_transcript) {
             showButtons('inline-block');
         }
@@ -86,6 +137,7 @@ function startButton(event) {
         recognition.stop();
         return;
     }
+    playChime();
     $("#mic-button").addClass("pulse-button-anim");
     $(".question").removeClass("hidden");
     final_transcript = '';
@@ -94,6 +146,7 @@ function startButton(event) {
     ignore_onend = false;
     showButtons('none');
     start_timestamp = event.timeStamp;
+    updateScroll();
 }
 
 
@@ -119,9 +172,7 @@ function ask_server(query) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this);
-            speak(this.responseText);
-            $("#final_span_response").text(this.responseText);
+            handleResponse(this.responseText);
         }
     };
     xhttp.open("GET", "/api/ask/" + query, true);
@@ -131,35 +182,35 @@ function ask_server(query) {
 
 function handleResponse (response) {
     console.log(response);
-    if (typeof response == "string") {
-        console.log('the response is only text');
-        speak(response);
-    }
-    else {
-        console.log('the response if a card!');
-        // Speak the voice part
-        speak(response.voice);
-        createCard(response);
-    }
+    conversation.addResponse(response);
+    console.log(conversation);
+
+    speak(response);
 }
 
-function createCard (responseData) {
-    $(".response").removeClass("hidden");
-    setTimeout(function() {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log(this);
-                speak(this.responseText);
-                $(".spinner").addClass("hidden");
-                $(".final").text(this.responseText);
-            }
-        };
-        xhttp.open("GET", "/api/ask/" + query, true);
-        xhttp.send();
-    }, 1000);
-}
 
 function speak(text) {
     responsiveVoice.speak(text);
+}
+
+
+Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+};
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i >= 0; i--) {
+        if(this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+};
+
+function playChime() {
+    var audio = document.getElementById("audio");
+    audio.play();
+}
+
+function updateScroll(){
+    var element = document.getElementById("conversation");
+    element.scrollTop = element.scrollHeight;
 }

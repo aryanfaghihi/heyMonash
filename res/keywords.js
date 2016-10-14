@@ -31,20 +31,20 @@ module.exports = {
                         "working hour"
                     ],
                     [
-                        "matheson",
-                        "mathesons",
-                        "matheasons",
-                        "matherson",
-                        "matho",
-                        "law",
-                        "lawl",
+                        // "matheson",
+                        // "mathesons",
+                        // "matheasons",
+                        // "matherson",
+                        // "matho",
+                        // "law",
+                        // "lawl",
                         "hargreaves",
                         "hargraves",
                         "hargrave"
                     ]
                 ]
             },
-            response: response.getTime()
+            response: response.getHalTime()
         },
         {
             keywords: {

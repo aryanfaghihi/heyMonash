@@ -18,7 +18,7 @@ module.exports = {
     },
 
     getClassLocation: function () {
-        var cLocation
+        var cLocation;
         cLocation = {
             voice: 'Your next class is at 5 30 PM at room G22, building 36, Rainforest Walk.Here are the directions to get there',
             title: 'Schedule',
@@ -27,7 +27,8 @@ module.exports = {
 
             ]
         }
-        
+
+
         return cLocation
 
     },
@@ -41,5 +42,10 @@ module.exports = {
     getIntroRes: function () {
         var intro = "Hi there. I am your Monash assigned personal assistant. How may I help you today?"
         return intro
+    },
+
+    getHalTime: function() {
+        var halTime = '<div class="mdl-card-wide mdl-shadow--2dp"> <div class="mdl-card__title mdl-card--expand"> <h2 class="mdl-card__title-text">Hargrave-Andrew Library</h2> </div> <div class="mdl-card__supporting-text"> Monday <span style="float: right;">8:00am - 12:00am</span> <br/> Tuesday <span style="float: right;">8:00am - 12:00am</span> <br/> Wednesday <span style="float: right;">8:00am - 12:00am</span> <br/> Thursday <span style="float: right;">8:00am - 12:00am</span> <br/> Friday <span style="float: right;">8:00am - 9:00pm</span> <br/> Saturday <span style="float: right;">1:00pm - 5:00pm</span> <br/> Sunday <span style="float: right;">1:00pm - 5:00pm</span> </div> <div class="mdl-card__actions mdl-card--border"> <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"> Get Directions </a> </div> </div>';
+        return halTime;
     }
 }
