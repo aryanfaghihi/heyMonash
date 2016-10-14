@@ -3,14 +3,14 @@ var app        = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-var port = 80;
+var port = 3000;
 var router = express.Router();
 var api = express.Router();
 router.get('/', function(req, res) {
-    res.sendfile('./index.html');
+    res.sendfile('./client/index.html');
 });
 router.get('/js', function(req, res) {
-    res.sendfile('./voice.js');
+    res.sendfile('./client/voice.js');
 });
 api.get('/ask/:query', function(req, res) {
     console.log(req.params.query);
