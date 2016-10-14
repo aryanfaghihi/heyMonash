@@ -83,6 +83,28 @@ module.exports = {
 
 
         },
+        {
+            keywords: {
+                required: [
+                    "how",
+                    "fees"
+                ],
+
+                alternatives: [
+                    "pay",
+                    "",
+                    "lab",
+                    "lecure",
+                    "practical",
+                    "prac",
+                    "laboratory"
+                ]
+            },
+            response: response.getClassLocation()
+
+
+        },
+
 
 
 
