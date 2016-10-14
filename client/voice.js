@@ -2,6 +2,24 @@ var final_transcript = '';
 var recognizing = false;
 var ignore_onend;
 var start_timestamp;
+conversation = {
+    history: [],
+    addQuestion: function (question) {
+        this.history.push({
+            questions: question,
+            response: ''
+        });
+    },
+    addResponse: function (response) {
+        var latestIndex = this.history.length - 1;
+        this.history[latestIndex].response = response;
+    }
+};
+// Just for us to know.
+var conversationTemplate = {
+    question: '',
+    response: ''
+}
 
 if (!('webkitSpeechRecognition' in window)) {
     console.log('USE CHROME!');
@@ -53,6 +71,8 @@ if (!('webkitSpeechRecognition' in window)) {
         for (var i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
                 final_transcript += event.results[i][0].transcript;
+                conversation.addQuestion(final_transcript);
+                console.log(conversation);
                 ask_server(final_transcript);
                 recognition.stop();
                 console.log(final_transcript);
@@ -121,9 +141,7 @@ function ask_server(query) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this);
-            speak(this.responseText);
-            $("#final_span_response").text(this.responseText);
+            handleResponse(this.responseText);
         }
     };
     xhttp.open("GET", "/api/ask/" + query, true);
@@ -133,9 +151,13 @@ function ask_server(query) {
 
 function handleResponse (response) {
     console.log(response);
+    conversation.addResponse(response);
+    console.log(conversation);
     if (typeof response == "string") {
         console.log('the response is only text');
         speak(response);
+        $("#final_span_response").text(response);
+
     }
     else {
         console.log('the response if a card!');
@@ -146,8 +168,17 @@ function handleResponse (response) {
 }
 
 function createCard (responseData) {
-
+    console.log('creating card now.')
 }
+
+// Just another test
+// setTimeout(function() {
+//     handleResponse({
+//         voice: 'hey monash',
+//         title: ''
+//     });
+// }, 1000)
+
 
 function speak(text) {
     responsiveVoice.speak(text);
