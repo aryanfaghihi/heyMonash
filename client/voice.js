@@ -13,7 +13,6 @@ if (!('webkitSpeechRecognition' in window)) {
 
     recognition.onstart = function() {
         recognizing = true;
-        // start_img.src = 'https://www.google.com/intl/en/chrome/assets/common/images/content/mic-animate.gif';
     };
 
     recognition.onerror = function(event) {
@@ -26,6 +25,7 @@ if (!('webkitSpeechRecognition' in window)) {
         if (event.error == 'not-allowed') {
             if (event.timeStamp - start_timestamp < 100) {
             } else {
+
             }
             ignore_onend = true;
         }
@@ -48,7 +48,6 @@ if (!('webkitSpeechRecognition' in window)) {
     };
 
     recognition.onresult = function(event) {
-        $(".response").removeClass("hidden");
         var interim_transcript = '';
         for (var i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
@@ -75,11 +74,11 @@ function linebreak(s) {
     return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
 }
 
+
 var first_char = /\S/;
 function capitalize(s) {
     return s.replace(first_char, function(m) { return m.toUpperCase(); });
 }
-
 
 
 function startButton(event) {
@@ -118,16 +117,21 @@ if (window.XMLHttpRequest) {
 }
 
 function ask_server(query) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(this);
-            speak(this.responseText);
-            $("#final_span_response").text(this.responseText);
-        }
-    };
-    xhttp.open("GET", "/api/ask/" + query, true);
-    xhttp.send();
+    $(".response").removeClass("hidden");
+    setTimeout(function() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this);
+                speak(this.responseText);
+                $(".spinner").addClass("hidden");
+                $(".final").text(this.responseText);
+            }
+        };
+        xhttp.open("GET", "/api/ask/" + query, true);
+        xhttp.send();
+    }, 1000);
+
 
 }
 

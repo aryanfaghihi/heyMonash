@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-blue.min.css"/>
     <link rel="stylesheet" href="/css">
     <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -24,22 +25,24 @@
         <ol class="conversation">
 
             <div class="question hidden">
-                <div class="bubble-question" id="results">
+                <div class="bubble-question">
                     <span id="interim_span" class="interim"></span>
-                    <span id="final_span" class="final"></span>
-                    <span></span>
+                    <span id="final_span"></span>
                 </div>
             </div>
 
             <div class="response hidden">
-                <div class="bubble-response" id="results">
+                <div class="bubble-response">
                     <span class="final"></span>
-                    <span id="final_span_response" class="interim"></span>
-                    <span></span>
+                    <span id="final_span_response">
+                        <div class="spinner">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                    </span>
                 </div>
             </div>
-
-            <div class="spinner">
 
         </div>
 
@@ -50,15 +53,10 @@
 
     <!-- Microphone button -->
     <div class="mic" onclick="startButton(event)">
-        <div class="spinner">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
-        </div>
         <button id="mic-button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored pulse-button">
             <i class="material-icons">mic</i>
         </button>
     </div>
-
 
     <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
