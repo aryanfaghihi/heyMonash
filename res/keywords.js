@@ -87,28 +87,52 @@ module.exports = {
             keywords: {
                 required: [
                     "how",
-                    "fees"
+                    "fees",
+                    "pay"
                 ],
 
                 alternatives: [
-                    "pay",
-                    "",
-                    "lab",
-                    "lecure",
-                    "practical",
-                    "prac",
-                    "laboratory"
+
                 ]
             },
-            response: response.getClassLocation()
+            response: response.getFeesPay()
 
 
         },
 
 
+        {
+            keywords: {
+                required: [
+                    "hey monash",
+                    "introduce"
+                ],
+
+                alternatives: [
+                    "yourself"
+                ]
+            },
+            response: response.getIntroRes()
 
 
+        },
 
+        {
+            keywords: {
+                required: [
+                    "what",
+                    "do"
+                ],
+
+                alternatives: [
+                    "can",
+                    "able"
+                ]
+            },
+            response: response.getFunctions()
+
+
+        },
 
 
 

@@ -21,6 +21,16 @@ module.exports = {
         var cLocation= "you're next class is at 5 30 PM at room G22, building 36, Rainforest Walk.Here are the directions to get there"
         return cLocation
 
-    }
+    },
 
+    getFeesPay: function () {
+        var feesPay= " really! you are poor. you can't even afford a klondike bar"
+        return feesPay
+    },
+
+
+    getIntroRes: function () {
+        var intro = "Hi there. I am your Monash assigned personal assistant. How may I help you today?"
+        return intro
+    },
 }
