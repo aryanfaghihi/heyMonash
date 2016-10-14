@@ -130,16 +130,27 @@
 
 
 /*Card styles*/
+.mdl-card__title {
+    height: 160px;
+    background:
+    url('https://www.monash.edu/__data/assets/image/0003/157764/banner-title-hal.jpg') bottom right 50% no-repeat #46B6AC;
+    color: white;
+}
 .mdl-card {
     background-color: #f1f1f1;
     border-top-color: #1E90FF;
     border-top-style: solid;
+    border-top-width: 5px;
 }
 .mdl-card__supporting-text {
     color: #423F40;
-    font-weight: bold;
+    font-weight: lighter;
 }
 
 .mdl-button--icon {
     color: white;
+}
+
+.mdl-button__ripple-container {
+    color: #1E90FF;
 }
