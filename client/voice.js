@@ -32,13 +32,9 @@ if (!('webkitSpeechRecognition' in window)) {
     };
 
     recognition.onend = function() {
+        $("#mic-button").removeClass("pulse-button-anim");
         recognizing = false;
         if (ignore_onend) {
-            return;
-        }
-        // start_img.src = 'https://www.google.com/intl/en/chrome/assets/common/images/content/mic.gif';
-        if (!final_transcript) {
-            showInfo('info_start');
             return;
         }
 
@@ -87,9 +83,11 @@ function capitalize(s) {
 
 function startButton(event) {
     if (recognizing) {
+        $("#mic-button").removeClass("pulse-button-anim");
         recognition.stop();
         return;
     }
+    $("#mic-button").addClass("pulse-button-anim");
     final_transcript = '';
     recognition.lang = 'en-AU';
     recognition.start();
