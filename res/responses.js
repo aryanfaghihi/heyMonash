@@ -46,8 +46,13 @@ module.exports = {
 
     getHalTime: function() {
         var halTime = {
+<<<<<<< Updated upstream
             card: '<div class="mdl-card-wide mdl-shadow--2dp"> <div class="mdl-card__title mdl-card--expand"> <h2 class="mdl-card__title-text">Hargrave-Andrew Library</h2> </div> <div class="mdl-card__supporting-text"> Monday <span style="float: right;">8:00am - 12:00am</span> <br/> Tuesday <span style="float: right;">8:00am - 12:00am</span> <br/> Wednesday <span style="float: right;">8:00am - 12:00am</span> <br/> Thursday <span style="float: right;">8:00am - 12:00am</span> <br/> Friday <span style="float: right;">8:00am - 9:00pm</span> <br/> Saturday <span style="float: right;">1:00pm - 5:00pm</span> <br/> Sunday <span style="float: right;">1:00pm - 5:00pm</span> </div> <div class="mdl-card__actions mdl-card--border"> <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://www.google.com.au/maps/place/Monash+University+Clayton+Campus/@-37.9114772,145.1335671,18.11z/data=!4m5!3m4!1s0x6ad66acbf64673b9:0xfaf9b169a587104!8m2!3d-37.9114731!4d145.1344641"> Get Directions </a> </div> </div>',
             voice: "the library will close at 5 00 PM today. Here are some of the other days and times hargraves is open"
+=======
+            card: '<div class="mdl-card-wide mdl-shadow--2dp"> <div class="mdl-card__title mdl-card--expand"> <h2 class="mdl-card__title-text">Hargrave-Andrew Library</h2> </div> <div class="mdl-card__supporting-text"> Monday <span style="float: right;">8:00am - 12:00am</span> <br/> Tuesday <span style="float: right;">8:00am - 12:00am</span> <br/> Wednesday <span style="float: right;">8:00am - 12:00am</span> <br/> Thursday <span style="float: right;">8:00am - 12:00am</span> <br/> Friday <span style="float: right;">8:00am - 9:00pm</span> <br/> Saturday <span style="float: right;">1:00pm - 5:00pm</span> <br/> Sunday <span style="float: right;">1:00pm - 5:00pm</span> </div> <div class="mdl-card__actions mdl-card--border"> <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"> Get Directions </a> </div> </div>',
+            voice: "the library will close at 5 00 PM today here are some of the other days and times hargrave is open"
+>>>>>>> Stashed changes
         }
         return halTime;
     }

@@ -167,11 +167,9 @@
 @keyframes pulse {to {box-shadow: 0 0 0 120px rgba(232, 76, 61, 0);}}
 
 
-
 .hidden {
     display: none;
 }
-
 
 
 /*Card styles*/
@@ -202,4 +200,13 @@
 
 .mdl-button__ripple-container {
     color: #1E90FF;
+}
+
+#card-class.mdl-card__title {
+    height: 160px;
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ),
+    url('https://www.monash.edu/__data/assets/image/0007/371266/ltb-plaza.jpg') no-repeat #46B6AC;
+    color: white;
+    background-position: 50% 90%;
+    background-size: 400px 180px;
 }
