@@ -29,10 +29,34 @@ module.exports = {
                         "opening times",
                         "opening time",
                         "working hour"
+                    ],
+
+                    [
+                        "matheson",
+                        "mathesons",
+                        "matheasons",
+                        "matherson",
+                        "matho",
+                        "law",
+                        "lawl",
+                        "hargreaves",
+                        "hargraves",
+                        "hargrave",
                     ]
                 ]
             },
             response: response.getTime()
+        },
+        {
+            keywords: {
+                required: [
+                    "parking",
+                    "free"
+                ],
+                alternatives: [
+
+                ]
+            }
         }
     ]
 };
