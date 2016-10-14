@@ -28,7 +28,6 @@ conversation = {
         this.history[latestIndex].response = response;
 
         this.createResponseBubble(response, latestIndex);
-
         updateScroll();
     },
     createResponseBubble: function (response, index) {
