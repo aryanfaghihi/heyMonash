@@ -21,6 +21,9 @@ api.get('/ask/:query', function(req, res) {
     if (req.params.query.search("library") !== -1 && req.params.query.search("working hours") !== -1) {
         response = "Hargrave Andrew library closes at 8 pm today";
     }
+    if (req.params.query.search("hub") !== -1 && req.params.query.search("working hours") !== -1) {
+        response = "Hargrave Andrew library closes at 8 pm today";
+    }
     res.send(response);
 });
 function getCurrentTime() {
