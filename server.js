@@ -20,7 +20,7 @@ router.get('/css', function(req, res) {
 api.get('/ask/:query', function(req, res) {
     console.log(req.params.query);
     var inputQuery = req.params.query.toLowerCase();
-    var serverResponse = "No results.";
+    var serverResponse = "I'm sorry, I can't find a solution to that. Please try again!";
     for (var i = 0; i < logicArray.length; i++) {
         var isMatched = false;
         // Look through the required (compulsory) keywords.
