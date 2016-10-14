@@ -15,5 +15,24 @@ module.exports = {
                 "working hours"
             ]
         }
+    ],
+
+    newLogicArray: [
+        {
+            keywords: {
+                required: [
+                    "library"
+                ],
+                alternatives: [
+                    [
+                        "working hours",
+                        "opening times",
+                        "opening time",
+                        "working hour"
+                    ]
+                ]
+            },
+            response: response.getTime()
+        }
     ]
 };
