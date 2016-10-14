@@ -6,6 +6,8 @@ app.use(bodyParser.json());
 var port = 3000;
 var router = express.Router();
 var api = express.Router();
+var logicArray = require('./res/keywords').logicArray;
+
 router.get('/', function(req, res) {
     res.sendfile('./client/index.html');
 });
@@ -14,30 +16,29 @@ router.get('/js', function(req, res) {
 });
 api.get('/ask/:query', function(req, res) {
     console.log(req.params.query);
-    var response = "Sorry I did not find anything";
-    if (req.params.query.search("time") !== -1 && req.params.query.search("what") !== -1) {
-        response = getCurrentTime();
+    var inputQuery = req.params.query;
+    var serverResponse = "No results.";
+    for (var i = 0; i < logicArray.length; i++) {
+        var isMatched = false;
+        for (var j = 0; j < logicArray[i].keywords.length; j++) {
+            if (inputQuery.search(logicArray[i].keywords[j]) !== -1) {
+               isMatched = true;
+            }
+            else {
+                isMatched = false;
+                break;
+            }
+        }
+        if (isMatched) {
+            console.log('the response is ' + logicArray[i].response);
+            serverResponse = logicArray[i].response;
+            break;
+        }
     }
-    if (req.params.query.search("library") !== -1 && req.params.query.search("working hours") !== -1) {
-        response = "Hargrave Andrew library closes at 8 pm today";
-    }
-    if (req.params.query.search("hub") !== -1 && req.params.query.search("working hours") !== -1) {
-        response = "Hargrave Andrew library closes at 8 pm today";
-    }
-    res.send(response);
+
+    res.send(serverResponse);
 });
-function getCurrentTime() {
-    var date = new Date(); // for now
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0'+minutes : minutes;
-    var strTime = hours + ' ' + minutes + ' ' + ampm;
-    var time = "It's " + strTime;
-    return time
-}
+
 app.use('/', router);
 app.use('/api', api);
 // START THE SERVER
