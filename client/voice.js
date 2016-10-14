@@ -121,13 +121,30 @@ function ask_server(query) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this);
-            speak(this.responseText);
+            handleResponse(this.responseText);
             $("#final_span_response").text(this.responseText);
         }
     };
     xhttp.open("GET", "/api/ask/" + query, true);
     xhttp.send();
+
+}
+
+function handleResponse (response) {
+    console.log(response);
+    if (typeof response == "string") {
+        console.log('the response is only text');
+        speak(response);
+    }
+    else {
+        console.log('the response if a card!');
+        // Speak the voice part
+        speak(response.voice);
+        createCard(response);
+    }
+}
+
+function createCard (responseData) {
 
 }
 

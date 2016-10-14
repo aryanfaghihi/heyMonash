@@ -30,7 +30,6 @@ module.exports = {
                         "opening time",
                         "working hour"
                     ],
-
                     [
                         "matheson",
                         "mathesons",
