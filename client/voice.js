@@ -6,7 +6,6 @@ var start_timestamp;
 if (!('webkitSpeechRecognition' in window)) {
     console.log('USE CHROME!');
 } else {
-    // start_button.style.display = 'inline-block';
     var recognition = new webkitSpeechRecognition();
     recognition.continuous = true;
     recognition.interimResults = true;
@@ -146,7 +145,20 @@ function handleResponse (response) {
 }
 
 function createCard (responseData) {
-
+    $(".response").removeClass("hidden");
+    setTimeout(function() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this);
+                speak(this.responseText);
+                $(".spinner").addClass("hidden");
+                $(".final").text(this.responseText);
+            }
+        };
+        xhttp.open("GET", "/api/ask/" + query, true);
+        xhttp.send();
+    }, 1000);
 }
 
 function speak(text) {
