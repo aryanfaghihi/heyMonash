@@ -18,7 +18,7 @@ module.exports = {
     },
 
     getClassLocation: function () {
-        var cLocation= "you're next class is at 5 30 PM at room G22, building 36, Rainforest Walk.Here are the directions to get there"
+        var cLocation= "your next class is at 5 30 PM at room G22, building 36, Rainforest Walk.Here are the directions to get there"
         return cLocation
 
     },
