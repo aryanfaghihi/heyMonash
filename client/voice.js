@@ -130,7 +130,6 @@ function capitalize(s) {
 }
 
 
-
 function startButton(event) {
     if (recognizing) {
         $("#mic-button").removeClass("pulse-button-anim");
@@ -182,10 +181,18 @@ function ask_server(query) {
 
 function handleResponse (response) {
     console.log(response);
-    conversation.addResponse(response);
+    if (response.search("</") == -1) {
+        conversation.addResponse(response);
+        speak(response);
+    }
+    else {
+        response = JSON.parse(response);
+        conversation.addResponse(response.card);
+        speak(response.voice);
+    }
     console.log(conversation);
 
-    speak(response);
+    //speak(response);
 }
 
 
