@@ -54,9 +54,41 @@ module.exports = {
                     "free"
                 ],
                 alternatives: [
+                    "on campus",
+                    "university",
+                    "uni",
+                    "monash",
+                    "today"
+                ]
+            },
+            response: response.getParkLocation()
+        },
+        {
+            keywords: {
+                required: [
+                    "when"
+                ],
 
+                alternatives: [
+                    "tutorial",
+                    "class",
+                    "lab",
+                    ""
                 ]
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
     ]
 };

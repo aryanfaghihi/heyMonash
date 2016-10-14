@@ -10,5 +10,14 @@ module.exports = {
         var strTime = hours + ' ' + minutes + ' ' + ampm;
         var time = "It's " + strTime;
         return time;
+    },
+
+    getParkLocation: function () {
+        var location= "there is free parking on campus after 4:30 pm and on the weekends"
+        return location
     }
+
+
+
+
 }
