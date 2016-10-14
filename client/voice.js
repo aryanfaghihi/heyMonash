@@ -48,6 +48,7 @@ if (!('webkitSpeechRecognition' in window)) {
     };
 
     recognition.onresult = function(event) {
+        $(".response").removeClass("hidden");
         var interim_transcript = '';
         for (var i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
@@ -88,6 +89,7 @@ function startButton(event) {
         return;
     }
     $("#mic-button").addClass("pulse-button-anim");
+    $(".question").removeClass("hidden");
     final_transcript = '';
     recognition.lang = 'en-AU';
     recognition.start();

@@ -104,7 +104,6 @@ module.exports = {
         {
             keywords: {
                 required: [
-                    "hey monash",
                     "introduce"
                 ],
 
