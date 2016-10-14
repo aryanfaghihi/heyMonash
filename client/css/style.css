@@ -26,6 +26,50 @@
     clear: both;
     max-width: 75%;
     word-wrap: break-word;
+
+    animation: fadein 0.5s;
+    -moz-animation: fadein 0.5s;
+    /* Firefox */
+    -webkit-animation: fadein 0.5s;
+    /* Safari and Chrome */
+    -o-animation: fadein 0.5s;
+    /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein {
+    /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein {
+    /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein {
+    /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .question {
@@ -45,6 +89,7 @@
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     color: white;
+    transition: opacity 1s;
 }
 
 .bubble-response {
@@ -100,7 +145,7 @@
     width: 60px;
     height: 60px;
     border: none;
-    box-shadow: 0 0 0 0 #9ddae5;
+    box-shadow: 0 0 0 0 #b1cbe6;
     border-radius: 50%;
     background-color: #e84c3d;
     background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/jonathanlarradet_copy.png);
@@ -110,16 +155,16 @@
 
 }
 .pulse-button-anim {
-    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -webkit-animation: pulse 1s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1s infinite cubic-bezier(0.66, 0, 0, 1);
 }
 
-@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 120px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 120px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 120px rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 120px rgba(232, 76, 61, 0);}}
 
 
 
