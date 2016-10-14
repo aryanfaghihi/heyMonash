@@ -179,9 +179,6 @@
     background-color: white;
 }
 .mdl-card__title {
-    height: 160px;
-    background:
-    url('https://www.monash.edu/__data/assets/image/0003/157764/banner-title-hal.jpg') bottom right 50% no-repeat #46B6AC;
     color: white;
 }
 .mdl-card {
@@ -206,8 +203,15 @@
 #card-class.mdl-card__title {
     height: 160px;
     background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ),
-    url('https://www.monash.edu/__data/assets/image/0007/371266/ltb-plaza.jpg') no-repeat #46B6AC;
+    url('https://www.australiandesignreview.com/wp-content/uploads/2014/11/monash-4.jpg') no-repeat #46B6AC;
     color: white;
     background-position: 50% 90%;
     background-size: 400px 180px;
+}
+
+#card-library.mdl-card__title {
+    height: 160px;
+    background:
+    url('https://www.monash.edu/__data/assets/image/0003/157764/banner-title-hal.jpg') bottom right 50% no-repeat #46B6AC;
+    color: white;
 }
