@@ -17,6 +17,9 @@ router.get('/js', function(req, res) {
 router.get('/css', function(req, res) {
     res.sendfile('./client/css/style.css');
 });
+router.get('/chime', function(req, res) {
+    res.sendfile('./client/chime.ogg');
+});
 api.get('/ask/:query', function(req, res) {
     console.log(req.params.query);
     var inputQuery = req.params.query.toLowerCase();

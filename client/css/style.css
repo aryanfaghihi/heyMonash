@@ -130,6 +130,9 @@
 
 
 /*Card styles*/
+.mdl-card-wide {
+    margin-bottom: 1em;
+}
 .mdl-card__title {
     height: 160px;
     background:

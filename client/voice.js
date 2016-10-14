@@ -11,6 +11,7 @@ conversation = {
         });
         var index = this.history.length;
         this.createQuestionBubble(question, index);
+        updateScroll();
     },
     createQuestionBubble: function(question, index) {
         question = capitalize(question);
@@ -20,12 +21,14 @@ conversation = {
         newQuestionDiv.className="question";
         newQuestionDiv.innerHTML = "<div class='bubble-question'><span id='final_span" + index + "'>" + question + "</span></div>";
         conversationDiv.appendChild(newQuestionDiv);
+        updateScroll();
     },
     addResponse: function (response) {
         var latestIndex = this.history.length - 1;
         this.history[latestIndex].response = response;
 
         this.createResponseBubble(response, latestIndex);
+        updateScroll();
     },
     createResponseBubble: function (response, index) {
         var conversationDiv = document.getElementById('conversation');
@@ -33,6 +36,7 @@ conversation = {
         newResponseDiv.className="response";
         newResponseDiv.innerHTML = "<div class='bubble-response'><span id='final" + index + "'>" + response + "</span></div>";
         conversationDiv.appendChild(newResponseDiv);
+        updateScroll();
     }
 };
 // Just for us to know.
@@ -51,7 +55,6 @@ if (!('webkitSpeechRecognition' in window)) {
 
     recognition.onstart = function() {
         recognizing = true;
-        // start_img.src = 'https://www.google.com/intl/en/chrome/assets/common/images/content/mic-animate.gif';
         var conversationDiv = document.getElementById('conversation');
         var ongoingQuestionDiv = document.createElement("div");
         ongoingQuestionDiv.id = "ongoingQuestionDiv";
@@ -136,6 +139,7 @@ function startButton(event) {
         recognition.stop();
         return;
     }
+    playChime();
     $("#mic-button").addClass("pulse-button-anim");
     $(".question").removeClass("hidden");
     final_transcript = '';
@@ -144,6 +148,7 @@ function startButton(event) {
     ignore_onend = false;
     showButtons('none');
     start_timestamp = event.timeStamp;
+    updateScroll();
 }
 
 
@@ -230,10 +235,6 @@ function speak(text) {
 
 
 
-
-
-
-
 Element.prototype.remove = function() {
     this.parentElement.removeChild(this);
 }
@@ -243,4 +244,14 @@ NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
             this[i].parentElement.removeChild(this[i]);
         }
     }
+}
+
+function playChime() {
+    var audio = document.getElementById("audio");
+    audio.play();
+}
+
+function updateScroll(){
+    var element = document.getElementById("conversation");
+    element.scrollTop = element.scrollHeight;
 }
