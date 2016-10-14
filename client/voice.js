@@ -12,7 +12,6 @@ if (!('webkitSpeechRecognition' in window)) {
 
     recognition.onstart = function() {
         recognizing = true;
-        // start_img.src = 'https://www.google.com/intl/en/chrome/assets/common/images/content/mic-animate.gif';
     };
 
     recognition.onerror = function(event) {
