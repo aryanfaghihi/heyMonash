@@ -13,18 +13,18 @@ module.exports = {
     },
 
     getParkLocation: function () {
-        var pLocation= "there is free parking on campus after 4 30 pm.  also there is free parking on the weekends at the clayton campus"
+        var pLocation= "There is free parking on campus after 4 30 pm.  also there is free parking on the weekends at the clayton campus"
         return pLocation
     },
 
     getClassLocation: function () {
-        var cLocation= "your next class is at 5 30 PM at room G22, building 36, Rainforest Walk.Here are the directions to get there"
+        var cLocation= "Your next class is at 5 30 PM at room G22, building 36, Rainforest Walk.Here are the directions to get there"
         return cLocation
 
     },
 
     getFeesPay: function () {
-        var feesPay= " really! you are poor. you can't even afford a klondike bar"
+        var feesPay= "You're fees can easily be paid via the ....... site"
         return feesPay
     },
 
