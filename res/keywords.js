@@ -115,28 +115,7 @@ module.exports = {
             response: response.getIntroRes()
 
 
-        },
-
-        {
-            keywords: {
-                required: [
-                    "what",
-                    "do"
-                ],
-
-                alternatives: [
-                    "can",
-                    "able"
-                ]
-            },
-            response: response.getFunctions()
-
-
-        },
-
-
-
-
+        }
 
 
 

@@ -32,5 +32,5 @@ module.exports = {
     getIntroRes: function () {
         var intro = "Hi there. I am your Monash assigned personal assistant. How may I help you today?"
         return intro
-    },
+    }
 }
