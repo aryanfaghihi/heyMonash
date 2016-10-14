@@ -22,9 +22,9 @@ module.exports = {
         cLocation = {
             voice: 'Your next class is at 5 30 PM at room G22, building 36, Rainforest Walk.Here are the directions to get there',
             title: 'Schedule',
-            description: '<p>Room G22, Buliding 36</p> <p>Rainforest Walk</p>',
+            description: '',
             actions: [
-                "<a href='http://monash.edu'>Go to Monash page</a>"
+
             ]
         }
         
