@@ -41,7 +41,7 @@ module.exports = {
                         "lawl",
                         "hargreaves",
                         "hargraves",
-                        "hargrave",
+                        "hargrave"
                     ]
                 ]
             },
@@ -73,10 +73,17 @@ module.exports = {
                     "tutorial",
                     "class",
                     "lab",
-                    ""
+                    "lecure",
+                    "practical",
+                    "prac",
+                    "laboratory"
                 ]
-            }
-        }
+            },
+            response: response.getClassLocation()
+
+
+        },
+
 
 
 

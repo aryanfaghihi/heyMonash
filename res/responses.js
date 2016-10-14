@@ -13,11 +13,14 @@ module.exports = {
     },
 
     getParkLocation: function () {
-        var location= "there is free parking on campus after 4:30 pm and on the weekends"
-        return location
+        var pLocation= "there is free parking on campus after 4:30 pm and on the weekends"
+        return pLocation
+    },
+
+    getClassLocation: function () {
+        var cLocation= "you're next class is at 5:30 PM at room G22, building 36, Rainforest Walk.Here are the directions to get there"
+        return cLocation
+
     }
-
-
-
 
 }
