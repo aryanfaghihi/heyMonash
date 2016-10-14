@@ -197,6 +197,20 @@ function handleResponse (response) {
 
 function createCard (responseData) {
     console.log('creating card now.')
+    // $(".response").removeClass("hidden");
+    // setTimeout(function() {
+    //     var xhttp = new XMLHttpRequest();
+    //     xhttp.onreadystatechange = function() {
+    //         if (this.readyState == 4 && this.status == 200) {
+    //             console.log(this);
+    //             speak(this.responseText);
+    //             $(".spinner").addClass("hidden");
+    //             $(".final").text(this.responseText);
+    //         }
+    //     };
+    //     xhttp.open("GET", "/api/ask/" + query, true);
+    //     xhttp.send();
+    // }, 1000);
 }
 
 // Just another test

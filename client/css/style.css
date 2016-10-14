@@ -122,43 +122,35 @@
 @keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
 
 
-/*Card styles*/
+
 .hidden {
     display: none;
 }
 
-.card-wide.mdl-card {
-    width: 512px;
-}
 
-.card-wide > .mdl-card__menu {
-    color: #fff;
+
+/*Card styles*/
+.mdl-card__title {
+    height: 160px;
+    background:
+    url('https://www.monash.edu/__data/assets/image/0003/157764/banner-title-hal.jpg') bottom right 50% no-repeat #46B6AC;
+    color: white;
 }
 .mdl-card {
-    background-color: #DCDCDC;
+    background-color: #f1f1f1;
     border-top-color: #1E90FF;
     border-top-style: solid;
-    border-top-width: 9px;
-    color: #ffffff !important;
+    border-top-width: 5px;
 }
 .mdl-card__supporting-text {
     color: #423F40;
-    font-weight: bold;
+    font-weight: lighter;
 }
 
-.mdl-card__supporting-text li{
-    font-size: 12px;
-    list-style-type: none;
-    padding-top: 2px;
-
-}
 .mdl-button--icon {
     color: white;
 }
-a  {
-    font-weight: normal !important;
-    color: #423F40;
-}
-.mdl-card__actions {
-    padding-top: 5px;
+
+.mdl-button__ripple-container {
+    color: #1E90FF;
 }
