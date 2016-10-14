@@ -132,6 +132,7 @@
 /*Card styles*/
 .mdl-card-wide {
     margin-bottom: 1em;
+    background-color: white;
 }
 .mdl-card__title {
     height: 160px;

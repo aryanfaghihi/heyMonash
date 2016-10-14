@@ -28,6 +28,7 @@ conversation = {
         this.history[latestIndex].response = response;
 
         this.createResponseBubble(response, latestIndex);
+
         updateScroll();
     },
     createResponseBubble: function (response, index) {
@@ -48,7 +49,6 @@ var conversationTemplate = {
 if (!('webkitSpeechRecognition' in window)) {
     console.log('USE CHROME!');
 } else {
-    // start_button.style.display = 'inline-block';
     var recognition = new webkitSpeechRecognition();
     recognition.continuous = true;
     recognition.interimResults = true;
@@ -109,8 +109,6 @@ if (!('webkitSpeechRecognition' in window)) {
                 interim_transcript += event.results[i][0].transcript;
             }
         }
-        //final_transcript = capitalize(final_transcript);
-        //final_span.innerHTML = linebreak(final_transcript);
         if (document.getElementById("ongoingQuestion")) {
             document.getElementById("ongoingQuestion").innerHTML = linebreak(interim_transcript);
         }
@@ -187,46 +185,8 @@ function handleResponse (response) {
     conversation.addResponse(response);
     console.log(conversation);
 
-
-    // if (typeof response == "string") {
-    //     console.log('the response is only text');
-    //     speak(response);
-    //     $("#final_span_response").text(response);
-    //
-    // }
-    // else {
-    //     console.log('the response if a card!');
-    //     // Speak the voice part
-    //     speak(response.voice);
-    //     createCard(response);
-    // }
+    speak(response);
 }
-
-function createCard (responseData) {
-    console.log('creating card now.')
-    // $(".response").removeClass("hidden");
-    // setTimeout(function() {
-    //     var xhttp = new XMLHttpRequest();
-    //     xhttp.onreadystatechange = function() {
-    //         if (this.readyState == 4 && this.status == 200) {
-    //             console.log(this);
-    //             speak(this.responseText);
-    //             $(".spinner").addClass("hidden");
-    //             $(".final").text(this.responseText);
-    //         }
-    //     };
-    //     xhttp.open("GET", "/api/ask/" + query, true);
-    //     xhttp.send();
-    // }, 1000);
-}
-
-// Just another test
-// setTimeout(function() {
-//     handleResponse({
-//         voice: 'hey monash',
-//         title: ''
-//     });
-// }, 1000)
 
 
 function speak(text) {
@@ -234,17 +194,16 @@ function speak(text) {
 }
 
 
-
 Element.prototype.remove = function() {
     this.parentElement.removeChild(this);
-}
+};
 NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
     for(var i = this.length - 1; i >= 0; i--) {
         if(this[i] && this[i].parentElement) {
             this[i].parentElement.removeChild(this[i]);
         }
     }
-}
+};
 
 function playChime() {
     var audio = document.getElementById("audio");
