@@ -5,39 +5,68 @@ var start_timestamp;
 conversation = {
     history: [],
     addQuestion: function (question) {
-        this.history.push({
-            question: question,
-            response: ''
-        });
-        var index = this.history.length;
-        this.createQuestionBubble(question, index);
-        updateScroll();
+        // var addQuestion = this.isQuestionLegit(question);
+        // if (addQuestion.condition) {
+            this.history.push({
+                question: question,
+                response: ''
+            });
+            ask_server(final_transcript);
+            recognition.stop();
+            var index = this.history.length;
+            this.createQuestionBubble(question, index);
+            updateScroll();
+        // }
     },
     createQuestionBubble: function(question, index) {
         question = capitalize(question);
         var conversationDiv = document.getElementById('conversation');
         var newQuestionDiv = document.createElement("div");
-        document.getElementById("ongoingQuestionDiv").remove();
+        if (document.getElementById("ongoingQuestionDiv")) {
+            document.getElementById("ongoingQuestionDiv").remove();
+        }
         newQuestionDiv.className="question";
         newQuestionDiv.innerHTML = "<div class='bubble-question'><span id='final_span" + index + "'>" + question + "</span></div>";
         conversationDiv.appendChild(newQuestionDiv);
         updateScroll();
     },
-    addResponse: function (response) {
+    addResponse: function (response, isCard) {
         var latestIndex = this.history.length - 1;
         this.history[latestIndex].response = response;
 
-        this.createResponseBubble(response, latestIndex);
+        this.createResponseBubble(response, latestIndex, isCard);
+
         updateScroll();
     },
-    createResponseBubble: function (response, index) {
+    createResponseBubble: function (response, index, isCard) {
         var conversationDiv = document.getElementById('conversation');
         var newResponseDiv = document.createElement("div");
         newResponseDiv.className="response";
-        newResponseDiv.innerHTML = "<div class='bubble-response'><span id='final" + index + "'>" + response + "</span></div>";
+        newResponseDiv.innerHTML = "<div><span id='final" + index + "'>" + response + "</span></div>";
+        if (!isCard) {
+            newResponseDiv.innerHTML = "<div class='bubble-response'><span id='final" + index + "'>" + response + "</span></div>";
+        }
         conversationDiv.appendChild(newResponseDiv);
         updateScroll();
-    }
+    },
+    // debuggingQuestionHistory: [],
+
+    // isQuestionLegit: function(question) {
+    //     console.log(question);
+    //     this.debuggingQuestionHistory.push(question);
+    //     if (this.debuggingQuestionHistory.length > 2) {
+    //         this.debuggingQuestionHistory = [];
+    //         return {
+    //             condition: true,
+    //             question: question
+    //         }
+    //     }
+    //     return {
+    //         condition: false,
+    //         question: ''
+    //     };
+    // }
+
 };
 // Just for us to know.
 var conversationTemplate = {
@@ -87,7 +116,9 @@ if (!('webkitSpeechRecognition' in window)) {
         if (window.getSelection) {
             window.getSelection().removeAllRanges();
             var range = document.createRange();
-            range.selectNode(document.getElementById('ongoingQuestion'));
+            if (document.getElementById('ongoingQuestion')) {
+                range.selectNode(document.getElementById('ongoingQuestion'));
+            }
             window.getSelection().addRange(range);
         }
 
@@ -99,11 +130,10 @@ if (!('webkitSpeechRecognition' in window)) {
         for (var i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
                 final_transcript += event.results[i][0].transcript;
-                conversation.addQuestion(final_transcript);
-                console.log(conversation);
-                ask_server(final_transcript);
-                recognition.stop();
-                console.log(final_transcript);
+                    conversation.addQuestion(final_transcript);
+                    console.log(conversation);
+                    console.log(final_transcript);
+
             } else {
                 interim_transcript += event.results[i][0].transcript;
             }
@@ -181,12 +211,12 @@ function ask_server(query) {
 function handleResponse (response) {
     console.log(response);
     if (response.search("</") == -1) {
-        conversation.addResponse(response);
+        conversation.addResponse(response, false);
         speak(response);
     }
     else {
         response = JSON.parse(response);
-        conversation.addResponse(response.card);
+        conversation.addResponse(response.card, true);
         speak(response.voice);
     }
     console.log(conversation);

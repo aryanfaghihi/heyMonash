@@ -20,12 +20,8 @@ module.exports = {
     getClassLocation: function () {
         var cLocation;
         cLocation = {
-            voice: 'Your next class is at 5 30 PM at room G22, building 36, Rainforest Walk.Here are the directions to get there',
-            title: 'Schedule',
-            description: '',
-            actions: [
-
-            ]
+            voice: "Hi what's up bro?",
+            card: '<div class="mdl-card-wide mdl-shadow--2dp card-class"> <div id="card-class" class="mdl-card__title mdl-card--expand card-class"> <h2 class="mdl-card__title-text">FIT2003: IT Professional Practice - Tutorial</h2> </div> <div class="mdl-card__supporting-text"> <b>2:00PM - 4:00PM</b> <br/> Room G22, 14 Rainforest Walk </div> <div class="mdl-card__actions mdl-card--border"> <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"> Get Directions </a> </div> <div class="mdl-card__actions mdl-card--border"> <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"> View on Moodle </a> </div> </div>'
         }
 
 
