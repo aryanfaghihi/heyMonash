@@ -147,7 +147,7 @@ module.exports = {
         {
             keywords: {
                 required: [
-                    "assignments"
+                    "assignment"
                 ],
 
                 alternatives: [

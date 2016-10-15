@@ -72,10 +72,8 @@ module.exports = {
 
     getAssign: function () {
         var dueDate = {
-            card: '<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp"> <thead> <tr> <th class="mdl-data-table__cell--non-numeric">Unit</th> <th>Marks</th> <th>Due Date</th></tr></thead><tbody><tr><td class="mdl-data-table__cell--non-numeric">FIT1012 (Intro to IT) (Transparent)</td> <td>25</td> <td>19/10/2016</td></tr><tr> <td class="mdl-data-table__cell--non-numeric">FIT1016 (Software Eng 101) (Birch)</td> <td>5</td> <td>16/10/2016</td> </tr> <tr> <td class="mdl-data-table__cell--non-numeric">FIT3026 (It & Business)</td> <td>10</td> <td>23/10/2016</td> </tr> </tbody> </table>',
-            voice: 'Here are the assignments due for the following week '
-
-
+            card: '<table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp"><thead><tr><th class="mdl-data-table__cell--non-numeric">Unit</th><th>Marks</th><th>Due Date</th></tr></thead><tbody><tr><td class="mdl-data-table__cell--non-numeric">FIT1012: Intro to IT</td><td>25</td><td>19/10/2016</td></tr><tr><td class="mdl-data-table__cell--non-numeric">FIT1012: Comp Sci</td><td>5</td><td>16/10/2016</td></tr><tr><td class="mdl-data-table__cell--non-numeric">FIT3026: IT and Business</td><td>10</td><td>23/10/2016</td></tr></tbody></table>',
+            voice: 'Here are the assignments you have due in the following week:'
         }
         return dueDate
     }
