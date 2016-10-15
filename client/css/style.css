@@ -143,8 +143,8 @@
 
 .pulse-button {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border: none;
     box-shadow: 0 0 0 0 #b1cbe6;
     border-radius: 50%;
@@ -213,7 +213,7 @@
 #card-library-hal.mdl-card__title {
     height: 160px;
     background:
-    url('https://www.monash.edu/__data/assets/image/0003/157764/banner-title-hal.jpg') bottom right 50% no-repeat #46B6AC;
+    url('https://www.monash.edu/__data/assets/image/0003/157764/banner-title-hal.jpg') bottom right 70% no-repeat #46B6AC;
     color: white;
 }
 

@@ -28,12 +28,6 @@ module.exports = {
 
     },
 
-    // getFeesPay: function () {
-    //     var feesPay = "You can pay your fees easily at http://www.monash.edu/fees/payment/payment-options"
-    //     return feesPay
-    // },
-
-
     getIntroRes: function () {
         var intro = "Good afternoon! I'm your personal assistant for all things Monash. How may I help you today?"
         return intro
@@ -61,6 +55,7 @@ module.exports = {
             card: '<div class="demo-card-event mdl-card mdl-shadow--2dp"><div class="mdl-card__title mdl-card--expand"><h4>Pay your fees<br/><p>When fees are due, you will receive a document advising you of the amount and due date. This will be in the form of one of the following...</p></h4></div><div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://www.monash.edu/fees/payment/payment-options">Visit Website</a><div class="mdl-layout-spacer"></div><i class="material-icons">language</i></div></div>',
             voice: "You can easily pay your fees on the Monash website. Visit the link below to get started!"
         }
+        return feesPay;
     },
 
 
