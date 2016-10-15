@@ -127,22 +127,26 @@ if (!('webkitSpeechRecognition' in window)) {
     recognition.onresult = function(event) {
         $(".response").removeClass("hidden");
         var interim_transcript = '';
-        for (var i = event.resultIndex; i < event.results.length; ++i) {
-            if (event.results[i].isFinal) {
-                final_transcript += event.results[i][0].transcript;
+        if (isMobile()) {
+            handleMobileQuestion(event);
+        }
+        else {
+            for (var i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    final_transcript += event.results[i][0].transcript;
                     conversation.addQuestion(final_transcript);
                     console.log(conversation);
                     console.log(final_transcript);
-
-            } else {
-                interim_transcript += event.results[i][0].transcript;
+                } else {
+                    interim_transcript += event.results[i][0].transcript;
+                }
             }
-        }
-        if (document.getElementById("ongoingQuestion")) {
-            document.getElementById("ongoingQuestion").innerHTML = linebreak(interim_transcript);
-        }
-        if (final_transcript || interim_transcript) {
-            showButtons('inline-block');
+            if (document.getElementById("ongoingQuestion")) {
+                document.getElementById("ongoingQuestion").innerHTML = linebreak(interim_transcript);
+            }
+            if (final_transcript || interim_transcript) {
+                showButtons('inline-block');
+            }
         }
     };
 }
@@ -249,4 +253,25 @@ function playChime() {
 function updateScroll(){
     var element = document.getElementById("conversation");
     element.scrollTop = element.scrollHeight;
+}
+
+
+function handleMobileQuestion (event) {
+    console.log(event);
+}
+
+function isMobile() {
+    if( navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)
+    ){
+        return true;
+    }
+    else {
+        return false;
+    }
 }
