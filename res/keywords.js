@@ -151,15 +151,32 @@ module.exports = {
                 ],
 
                 alternatives: [
+                    [
                     "due",
                     "what",
                     "how many"
+                        ]
                 ]
             },
             response: response.getAssign()
+        },
+        {
+            keywords: {
+                required: [
+                    "email"
+                ],
+
+                alternatives: [
+                    [
+                    "email",
+                    "how many",
+                    "do i"
+                    ]
+                ]
+
+            },
+        response: response.getMail()
         }
-
-
 
     ]
 

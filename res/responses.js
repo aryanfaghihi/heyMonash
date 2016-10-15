@@ -76,6 +76,14 @@ module.exports = {
             voice: 'Here are the assignments you have due in the following week:'
         }
         return dueDate
+    },
+
+    getMail: function () {
+        var mail = {
+            card: '<span class="mdl-badge" data-badge="4">Inbox</span>',
+            voice: 'You have 4 new email messages'
+        }
+        return mail
     }
 
 }
