@@ -114,7 +114,7 @@
 
 .fadeout {
     position: relative;
-    bottom: 55px;
+    bottom: 50px;
     height: 60px;
     background: -webkit-linear-gradient(
         rgba(255, 255, 255, 0) 0%,
@@ -167,22 +167,18 @@
 @keyframes pulse {to {box-shadow: 0 0 0 120px rgba(232, 76, 61, 0);}}
 
 
-
 .hidden {
     display: none;
 }
 
 
-
 /*Card styles*/
 .mdl-card-wide {
+    width: 250px;
     margin-bottom: 1em;
     background-color: white;
 }
 .mdl-card__title {
-    height: 160px;
-    background:
-    url('https://www.monash.edu/__data/assets/image/0003/157764/banner-title-hal.jpg') bottom right 50% no-repeat #46B6AC;
     color: white;
 }
 .mdl-card {
@@ -202,4 +198,20 @@
 
 .mdl-button__ripple-container {
     color: #1E90FF;
+}
+
+#card-class.mdl-card__title {
+    height: 160px;
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ),
+    url('https://www.australiandesignreview.com/wp-content/uploads/2014/11/monash-4.jpg') no-repeat #46B6AC;
+    color: white;
+    background-position: 50% 90%;
+    background-size: 400px 180px;
+}
+
+#card-library.mdl-card__title {
+    height: 160px;
+    background:
+    url('https://www.monash.edu/__data/assets/image/0003/157764/banner-title-hal.jpg') bottom right 50% no-repeat #46B6AC;
+    color: white;
 }
