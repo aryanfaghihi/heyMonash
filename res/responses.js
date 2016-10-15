@@ -20,14 +20,9 @@ module.exports = {
     getClassLocation: function () {
         var cLocation;
         cLocation = {
-            voice: 'Your next class starts at 2 00 pm at Theatre H3, 22 Chancellors Walk. Here are the directions to get there.',
-            title: 'Schedule',
-            description: '',
-            actions: [
-
-            ]
+            voice: "Your next class, IT professional practice is on Monday at 2 pm",
+            card: '<div class="mdl-card-wide mdl-shadow--2dp card-class"> <div id="card-class" class="mdl-card__title mdl-card--expand card-class"> <h2 class="mdl-card__title-text">FIT2003: IT Professional Practice - Lecture</h2> </div> <div class="mdl-card__supporting-text"> <b>2:00PM - 4:00PM</b> <br/> Theatre H3, 20 Chancellors Walk </div> <div class="mdl-card__actions mdl-card--border"> <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://www.google.com.au/maps/place/Robert+Menzies+Building/@-37.9119733,145.1319818,18.46z/data=!4m5!3m4!1s0x0:0xc05606458f216ac4!8m2!3d-37.9128179!4d145.1324576"> Get Directions </a> </div> <div class="mdl-card__actions mdl-card--border"> <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="http://moodle.vle.monash.edu/"> View on Moodle </a> </div> </div>'
         }
-
 
         return cLocation
 
@@ -52,10 +47,23 @@ module.exports = {
         return halTime;
     },
 
+
     getFeesPay: function () {
         var feesPay = {
             card: '<div class="demo-card-event mdl-card mdl-shadow--2dp"><div class="mdl-card__title mdl-card--expand"><h4>Pay your fees<br/><p>When fees are due, you will receive a document advising you of the amount and due date. This will be in the form of one of the following...</p></h4></div><div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://www.monash.edu/fees/payment/payment-options">Visit Website</a><div class="mdl-layout-spacer"></div><i class="material-icons">language</i></div></div>',
             voice: "You can easily pay your fees on the Monash website. Visit the link below to get started!"
         }
+    },
+
+
+
+    getCanDo: function () {
+        var canDo = {
+            card:  '<span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--blue mdl-color-text--white">F</span> <span class="mdl-chip__text">"How can I pay my fees?"</span> </span> </br> <span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--red mdl-color-text--white">C</span> <span class="mdl-chip__text">"When is my next class?"</span> </span> </br> <span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--yellow mdl-color-text--white">L</span> <span class="mdl-chip__text">"What time does matheson library open?"</span> </span> </br> <span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--green mdl-color-text--white">P</span> <span class="mdl-chip__text">"Is there free parking on campus today?"</span> </span> </br>',
+            voice: "These are some of the few things I can do"
+        }
+
+
+        return canDo;
     }
 }
