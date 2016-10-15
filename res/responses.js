@@ -46,5 +46,17 @@ module.exports = {
             voice: "the library will close at 5 00 PM today. Here are some of the other days and times hargraves is open"
         }
         return halTime;
+    },
+
+
+
+    getCanDo: function () {
+        var canDo = {
+            card:  '<span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--blue mdl-color-text--white">F</span> <span class="mdl-chip__text">"How can I pay my fees?"</span> </span> </br> <span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--red mdl-color-text--white">C</span> <span class="mdl-chip__text">"When is my next class?"</span> </span> </br> <span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--yellow mdl-color-text--white">L</span> <span class="mdl-chip__text">"What time does matheson library open?"</span> </span> </br> <span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--green mdl-color-text--white">P</span> <span class="mdl-chip__text">"Is there free parking on campus today?"</span> </span> </br>',
+            voice: "These are some of the few things I can do"
+        }
+
+
+        return canDo;
     }
 }
