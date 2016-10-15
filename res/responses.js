@@ -1,19 +1,19 @@
 module.exports = {
-    getTime: function() {
+    getTime: function () {
         var date = new Date(); // for now
         var hours = date.getHours();
         var minutes = date.getMinutes();
         var ampm = hours >= 12 ? 'pm' : 'am';
         hours = hours % 12;
         hours = hours ? hours : 12; // the hour '0' should be '12'
-        minutes = minutes < 10 ? '0'+minutes : minutes;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
         var strTime = hours + ' ' + minutes + ' ' + ampm;
         var time = "It's " + strTime;
         return time;
     },
 
     getParkLocation: function () {
-        var pLocation= "There's free parking on campus after 4 30 pm. There's also free parking on the weekend at Clayton."
+        var pLocation = "There's free parking on campus after 4 30 pm. There's also free parking on the weekend at Clayton."
         return pLocation
     },
 
@@ -58,21 +58,32 @@ module.exports = {
 
     getFeesPay: function () {
         var feesPay = {
-            card: '<div class="demo-card-event mdl-card mdl-shadow--2dp"><div class="mdl-card__title mdl-card--expand"><h4>Pay your fees<br/><p>When fees are due, you will receive a document advising you of the amount and due date. This will be in the form of one of the following...</p></h4></div><div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://www.monash.edu/fees/payment/payment-options">Visit Website</a><div class="mdl-layout-spacer"></div><i class="material-icons">language</i></div></div>',
+            card: '<div class="demo-card-event mdl-card mdl-shadow--2dp"><div class="mdl-card__title mdl-card--expand"><h4>Pay your fees<br/><p>When fees are due, you will receive a document advising you of the amount and due date. This will be in the form of one of the following...</p></h4></div><div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://www.monash.edu/fees/payment/payment-options">Visit Website</a><div class="mdl-layout-spacer"></div><i class="material-icons">language</i></div></div>',
             voice: "You can easily pay your fees on the Monash website. Visit the link below to get started!"
         }
         return feesPay
     },
 
 
-
     getCanDo: function () {
         var canDo = {
-            card:  '<span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--blue mdl-color-text--white">F</span> <span class="mdl-chip__text">"How can I pay my fees?"</span> </span> </br> <span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--red mdl-color-text--white">C</span> <span class="mdl-chip__text">"When is my next class?"</span> </span> </br> <span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--yellow mdl-color-text--white">L</span> <span class="mdl-chip__text">"What time does matheson library open?"</span> </span> </br> <span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--green mdl-color-text--white">P</span> <span class="mdl-chip__text">"Is there free parking on campus today?"</span> </span> </br>',
+            card: '<span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--blue mdl-color-text--white">F</span> <span class="mdl-chip__text">"How can I pay my fees?"</span> </span> </br> <span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--red mdl-color-text--white">C</span> <span class="mdl-chip__text">"When is my next class?"</span> </span> </br> <span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--yellow mdl-color-text--white">L</span> <span class="mdl-chip__text">"What time does the Hargrave library open?"</span> </span> </br> <span class="mdl-chip mdl-chip--contact"> <span class="mdl-chip__contact mdl-color--green mdl-color-text--white">P</span> <span class="mdl-chip__text">"Is there free parking on campus today?"</span> </span> </br>',
             voice: "These are some of the few things I can do"
         }
 
 
         return canDo;
+    },
+
+
+    getAssign: function () {
+        var dueDate = {
+            card: '<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp"> <thead> <tr> <th class="mdl-data-table__cell--non-numeric">Unit</th> <th>Marks</th> <th>Due Date</th></tr></thead><tbody><tr><td class="mdl-data-table__cell--non-numeric">FIT1012 (Intro to IT) (Transparent)</td> <td>25</td> <td>19/10/2016</td></tr><tr> <td class="mdl-data-table__cell--non-numeric">FIT1016 (Software Eng 101) (Birch)</td> <td>5</td> <td>16/10/2016</td> </tr> <tr> <td class="mdl-data-table__cell--non-numeric">FIT3026 (It & Business)</td> <td>10</td> <td>23/10/2016</td> </tr> </tbody> </table>',
+            voice: 'Here are the assignments due for the following week '
+
+
+        }
+        return dueDate
     }
+
 }

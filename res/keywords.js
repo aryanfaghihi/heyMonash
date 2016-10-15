@@ -155,14 +155,28 @@ module.exports = {
             response: response.getCanDo()
 
 
+        },
+
+
+        {
+            keywords: {
+                required: [
+                    "assignments"
+                ],
+
+                alternatives: [
+                    "due",
+                    "what",
+                    "how many"
+                ]
+            },
+            response: response.getAssign()
         }
 
 
 
-
-
-
-
-
     ]
+
+
+
 };
