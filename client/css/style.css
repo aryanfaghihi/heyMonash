@@ -183,9 +183,9 @@
 }
 .mdl-card {
     background-color: #f1f1f1;
-    border-top-color: #1E90FF;
-    border-top-style: solid;
-    border-top-width: 5px;
+    /*border-top-color: #1E90FF;*/
+    /*border-top-style: solid;*/
+    /*border-top-width: 5px;*/
 }
 .mdl-card__supporting-text {
     color: #423F40;
@@ -214,4 +214,36 @@
     background:
     url('https://www.monash.edu/__data/assets/image/0003/157764/banner-title-hal.jpg') bottom right 50% no-repeat #46B6AC;
     color: white;
+}
+
+
+
+.demo-card-event.mdl-card {
+    width: 250px;
+    background: white;
+}
+.demo-card-event > .mdl-card__actions {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.demo-card-event > .mdl-card__title {
+    color: black;
+    align-items: flex-start;
+}
+.demo-card-event > .mdl-card__title > h4 {
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.demo-card-event > .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+}
+.demo-card-event > .mdl-card__actions > .material-icons {
+    padding-right: 10px;
+}
+.demo-card-event > .mdl-card__title,
+.demo-card-event > .mdl-card__actions,
+.demo-card-event > .mdl-card__actions > .mdl-button {
+    color: #1E90FF;
 }
