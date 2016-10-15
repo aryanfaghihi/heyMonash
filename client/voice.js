@@ -127,10 +127,10 @@ if (!('webkitSpeechRecognition' in window)) {
     recognition.onresult = function(event) {
         $(".response").removeClass("hidden");
         var interim_transcript = '';
-        if (isMobile()) {
-            handleMobileQuestion(event);
-        }
-        else {
+        // if (isMobile()) {
+        //     handleMobileQuestion(event);
+        // }
+        // else {
             for (var i = event.resultIndex; i < event.results.length; ++i) {
                 if (event.results[i].isFinal) {
                     final_transcript += event.results[i][0].transcript;
@@ -147,7 +147,7 @@ if (!('webkitSpeechRecognition' in window)) {
             if (final_transcript || interim_transcript) {
                 showButtons('inline-block');
             }
-        }
+        // }
     };
 }
 
