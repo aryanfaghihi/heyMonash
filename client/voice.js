@@ -35,7 +35,7 @@ conversation = {
         var conversationDiv = document.getElementById('conversation');
         var newResponseDiv = document.createElement("div");
         newResponseDiv.className="response";
-        newResponseDiv.innerHTML = "<div class='bubble-response'><span id='final" + index + "'>" + response + "</span></div>";
+        newResponseDiv.innerHTML = "<div><span id='final" + index + "'>" + response + "</span></div>";
         conversationDiv.appendChild(newResponseDiv);
         updateScroll();
     }

@@ -117,14 +117,18 @@ module.exports = {
         {
             keywords: {
                 required: [
-                    "introduce"
+                    "you"
                 ],
 
                 alternatives: [
-                    "yourself"
+                    "can",
+                    "are you",
+                    "able",
+                    "what",
+                    "help"
                 ]
             },
-            response: response.getIntroRes()
+            response: response.getCanDo()
 
 
         }
