@@ -1,22 +1,6 @@
 var response = require('./responses');
 
 module.exports = {
-    logicArray: [
-        {
-            "keywords": [
-                "what",
-                "time"
-            ],
-            "response": response.getTime()
-        },
-        {
-            "keywords": [
-                "library",
-                "working hours"
-            ]
-        }
-    ],
-
     newLogicArray: [
         {
             keywords: {
@@ -28,23 +12,49 @@ module.exports = {
                         "working hours",
                         "opening times",
                         "opening time",
-                        "working hour"
+                        "working hour",
+                        "close",
+                        "today",
+                        "open"
                     ],
                     [
-                        // "matheson",
-                        // "mathesons",
-                        // "matheasons",
-                        // "matherson",
-                        // "matho",
-                        // "law",
-                        // "lawl",
                         "hargreaves",
                         "hargraves",
-                        "hargrave"
+                        "hargrave",
+                        "hargrave andrew",
+                        "andrew",
+                        "hargrave-andrew"
                     ]
                 ]
             },
             response: response.getHalTime()
+        },
+        {
+            keywords: {
+                required: [
+                    "library",
+                    "matheson"
+                ],
+                alternatives: [
+                    [
+                        "working hours",
+                        "opening times",
+                        "opening time",
+                        "working hour",
+                        "close",
+                        "today",
+                        "open"
+                    ],
+                    [
+                        "matheson",
+                        "mathesons",
+                        "matheasons",
+                        "matherson",
+                        "matho",
+                    ]
+                ]
+            },
+            response: response.getMathesonTime()
         },
         {
             keywords: {
