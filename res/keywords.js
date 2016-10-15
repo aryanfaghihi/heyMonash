@@ -49,6 +49,30 @@ module.exports = {
         {
             keywords: {
                 required: [
+                    "library",
+                    "matheson"
+                ],
+                alternatives: [
+                    [
+                        "working hours",
+                        "opening times",
+                        "opening time",
+                        "working hour"
+                    ],
+                    [
+                        "matheson",
+                        "mathesons",
+                        "matheasons",
+                        "matherson",
+                        "matho",
+                    ]
+                ]
+            },
+            response: response.getMathesonTime()
+        },
+        {
+            keywords: {
+                required: [
                     "parking",
                     "free"
                 ],
