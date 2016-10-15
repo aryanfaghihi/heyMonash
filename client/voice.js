@@ -41,7 +41,7 @@ conversation = {
     createResponseBubble: function (response, index, isCard) {
         var conversationDiv = document.getElementById('conversation');
         var newResponseDiv = document.createElement("div");
-        newResponseDiv.className="response";
+        newResponseDiv.className="response animated slideInLeft";
         newResponseDiv.innerHTML = "<div><span id='final" + index + "'>" + response + "</span></div>";
         if (!isCard) {
             newResponseDiv.innerHTML = "<div class='bubble-response'><span id='final" + index + "'>" + response + "</span></div>";
