@@ -1,9 +1,12 @@
 {
-  "name": "voice-test",
-  "main": "server.js",
+  "name": "heyMonash",
+  "version": "1.0.0",
+  "description": "heyMonash, Siri for Monash",
+  "main": "app.js",
   "scripts": {
     "start": "node app"
   },
+  "license": "ISC",
   "dependencies": {
     "body-parser": "~1.0.1",
     "express": "~4.0.0",
