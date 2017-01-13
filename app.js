@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-var port = 3000;
+var port = 1337;
 var router = express.Router();
 var api = express.Router();
 var logicArray = require('./res/keywords').newLogicArray;

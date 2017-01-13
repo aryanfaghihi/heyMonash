@@ -1,6 +1,9 @@
 {
   "name": "voice-test",
   "main": "server.js",
+  "scripts": {
+    "start": "node app"
+  },
   "dependencies": {
     "body-parser": "~1.0.1",
     "express": "~4.0.0",
