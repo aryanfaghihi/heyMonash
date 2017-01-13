@@ -3,7 +3,6 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-var port = 1337;
 var router = express.Router();
 var api = express.Router();
 var logicArray = require('./res/keywords').newLogicArray;
@@ -68,5 +67,7 @@ app.use('/', router);
 app.use('/api', api);
 // START THE SERVER
 // =============================================================================
-app.listen(port);
-console.log('Magic happens on port ' + port);
+var port = process.env.PORT || 1337;
+app.listen(port, function () {
+    console.log('Magic happens on port ' + port);
+});
