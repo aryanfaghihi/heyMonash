@@ -65,15 +65,15 @@ img.monash-logo {
 .card-next-exam {
     width: 100%;
     min-height: 0;
-    background-image: linear-gradient(right, #FFEB3B, #FFEB3B 20%, transparent 20%, transparent 100%);
-    background-image: -webkit-linear-gradient(right, #FFEB3B, #FFEB3B 20%, transparent 20%, transparent 100%)
+    background-image: linear-gradient(right, #ffdb00, #ffdb00 20%, transparent 20%, transparent 100%);
+    background-image: -webkit-linear-gradient(right, #ffdb00, #ffdb00 20%, transparent 20%, transparent 100%)
 }
 
 .card-next-meeting {
     width: 100%;
     min-height: 0;
-    background-image: linear-gradient(right, #FFEB3B, #FFEB3B 20%, transparent 20%, transparent 100%);
-    background-image: -webkit-linear-gradient(right, #FFEB3B, #FFEB3B 20%, transparent 20%, transparent 100%)
+    background-image: linear-gradient(right, #ffdb00, #ffdb00 20%, transparent 20%, transparent 100%);
+    background-image: -webkit-linear-gradient(right, #ffdb00, #ffdb00 20%, transparent 20%, transparent 100%)
 }
 
 .card-fees-due {
@@ -139,12 +139,13 @@ section.cards {
 }
 
 .card-time {
-    position: absolute;
-    right: 0.5em;
-    top: 3em;
     color: white;
     opacity: 0.8;
     text-align: center;
+    margin-right: -27%;
+    width: 27%;
+    float: right;
+    margin-top: -9%;
 }
 
 .card-next-assignment .card-time {
@@ -159,12 +160,14 @@ section.cards {
 .card-fees-due .card-time {
     top: 4em;
     right: 1em;
+    margin-top: 0;
 }
 
 .card-next-meeting .card-time {
     right: 0.4em;
     color: black;
     top: 5em;
+    margin-top: 0;
 }
 
 .time-hour {
@@ -277,13 +280,13 @@ section.cards {
 }
 
 .card-next-exam .card-title-icon {
-    color: #FFEB3B;
+    color: #ffdb00;
     font-size: 2em;
     margin-right: 0.5em;
 }
 
 .card-next-meeting .card-title-icon {
-    color: #FFEB3B;
+    color: #ffdb00;
     font-size: 2em;
     margin-right: 0.5em;
 }
