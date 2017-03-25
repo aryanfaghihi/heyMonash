@@ -76,6 +76,13 @@ img.monash-logo {
     background-image: -webkit-linear-gradient(right, #FFEB3B, #FFEB3B 20%, transparent 20%, transparent 100%)
 }
 
+.card-fees-due {
+    width: 100%;
+    min-height: 0;
+    background-image: linear-gradient(right, #FF5722, #FF5722 20%, transparent 20%, transparent 100%);
+    background-image: -webkit-linear-gradient(right, #FF5722, #FF5722 20%, transparent 20%, transparent 100%)
+}
+
 .card-ar {
     width: 100%;
     min-height: 0;
@@ -147,6 +154,11 @@ section.cards {
 .card-next-exam .card-time {
     right: 1em;
     color: black;
+}
+
+.card-fees-due .card-time {
+    top: 4em;
+    right: 1em;
 }
 
 .card-next-meeting .card-time {
@@ -254,6 +266,12 @@ section.cards {
 }
 
 .card-next-assignment .card-title-icon {
+    color: #FF5722;
+    font-size: 2em;
+    margin-right: 0.5em;
+}
+
+.card-fees-due .card-title-icon {
     color: #FF5722;
     font-size: 2em;
     margin-right: 0.5em;
