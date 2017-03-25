@@ -89,3 +89,7 @@ img.card-icon {
 .time-hour {
     font-size: 1.6em;
 }
+
+.mdl-card {
+    margin-bottom: 1em;
+}
