@@ -56,6 +56,11 @@ img.monash-logo {
     background-image: -webkit-linear-gradient(right, #2196F3, #2196F3 20%, transparent 20%, transparent 100%)
 }
 
+.card-opening-hours {
+    width: 100%;
+    min-height: 0;
+}
+
 .card-content-main {
     margin-right: 20%;
 }
@@ -92,4 +97,11 @@ img.card-icon {
 
 .mdl-card {
     margin-bottom: 1em;
+}
+
+.day-of-week {
+    font-weight: bold;
+    color: black;
+    margin-left: 0.5em;
+    margin-right: 2em;
 }
