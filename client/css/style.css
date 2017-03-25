@@ -63,6 +63,13 @@ img.monash-logo {
     background-image: -webkit-linear-gradient(right, #FF5722, #FF5722 15%, transparent 15%, transparent 100%)
 }
 
+.card-next-exam {
+    width: 100%;
+    min-height: 0;
+    background-image: linear-gradient(right, #FFEB3B, #FFEB3B 15%, transparent 15%, transparent 100%);
+    background-image: -webkit-linear-gradient(right, #FFEB3B, #FFEB3B 15%, transparent 15%, transparent 100%)
+}
+
 .card-opening-hours {
     width: 100%;
     min-height: 0;
@@ -100,6 +107,11 @@ img.card-icon {
 
 .card-next-assignment .card-time {
     right: 0.8em;
+}
+
+.card-next-exam .card-time {
+    right: 0.8em;
+    color: black;
 }
 
 .time-hour {
