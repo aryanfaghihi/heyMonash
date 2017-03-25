@@ -204,8 +204,8 @@
                         <div v-if="conv.type=='q'" class="bubble-question animated slideInRight">
                             {{conv.data}}
                         </div>
-                        <div v-if="conv.type=='a'" class="bubble-response animated slideInLeft">
-                            {{conv.data}}
+                        <div v-if="conv.type=='a'" class="bubble-response animated slideInLeft"
+                             :class="{'transparent-bg':conv.isCard}" v-html="conv.data">
                         </div>
                     </div>
 
@@ -224,6 +224,7 @@
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
         <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <audio id="audio" src="/chime"></audio>
         <script src="/public/script.js"></script>
 </body>

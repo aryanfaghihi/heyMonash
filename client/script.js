@@ -16,20 +16,35 @@ function addQuestion(question) {
 }
 
 function ask_server(query) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-            console.log(this.responseText);
-            vue.voice.conversations.push({
-                type: 'a',
-                data: this.responseText
-            });
-        }
-    };
-    xhttp.open("GET", "/api/ask/" + query, true);
-    xhttp.send();
+    axios.get('/api/ask/' + query)
+        .then(function (response) {
+            console.log(response);
+            handleServerResponse(response.data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 }
 
+function handleServerResponse(serverRes) {
+    console.log(serverRes);
+    if (typeof serverRes === 'string') {
+        vue.voice.conversations.push({
+            type: 'a',
+            data: serverRes,
+            isCard: false
+        });
+        responsiveVoice.speak(serverRes);
+    }
+    else {
+        vue.voice.conversations.push({
+            type: 'a',
+            data: serverRes.card,
+            isCard: true
+        });
+        responsiveVoice.speak(serverRes.voice);
+    }
+}
 
 // Voice
 var recognition;
@@ -129,6 +144,8 @@ function playChime() {
     var audio = document.getElementById("audio");
     audio.play();
 }
+
+// responsiveVoice.speak("Hello World");
 
 
 
