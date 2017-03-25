@@ -11,9 +11,6 @@ var logicArray = require('./res/keywords').newLogicArray;
 router.get('/', function (req, res) {
     res.sendfile('./client/index.html');
 });
-router.get('/android', function (req, res) {
-    res.sendfile('./client/android.html');
-});
 router.get('/js', function (req, res) {
     res.sendfile('./client/voice.js');
 });
