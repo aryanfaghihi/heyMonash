@@ -17,7 +17,7 @@ function addQuestion (question) {
     this.createQuestionBubble(question, index);
     updateScroll();
     // }
-};
+}
 
 function ask_server(query) {
     var xhttp = new XMLHttpRequest();
@@ -29,7 +29,6 @@ function ask_server(query) {
     xhttp.open("GET", "/api/ask/" + query, true);
     xhttp.send();
 }
-
 
 
 // Voice
