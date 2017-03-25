@@ -28,14 +28,9 @@
                                     <img src="img/profile.jpg">
                                 </button>
                                 <!-- Student name -->
-                                <span id="student-name-text">John Student</span>
+                                <span id="student-name-text">Jane Student</span>
                             </div>
                         </div>
-                        <!-- Monash logo -->
-                        <div style="text-align: right;" class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone">
-                            <img class="monash-logo" src="img/monash-logo.gif">
-                        </div>
-                    </div>
                 </section>
                 <!-- END header -->
                 <!-- Cards section (main body of app, scrollable) -->
@@ -64,11 +59,11 @@
                                     <!-- Next class actions -->
                                     <div class="mdl-card__actions">
                                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                                    View on Moodle
-                                </a>
+                                        View on Moodle
+                                    </a>
                                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                                    View Map
-                                </a>
+                                        View Map
+                                    </a>
                                     </div>
                                 </div>
                             </div>
@@ -140,24 +135,24 @@
                 <!-- App buttons for mic and AR -->
                 <section class="buttons">
                     <!--Microphone button-->
-                    <div class="mic" onclick="startButton(event)">
+                    <div class="mic" onclick="startButton(event)" @click="isVoiceMode=!isVoiceMode">
                         <button id="mic-button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored pulse-button">
                             <i class="material-icons">mic</i>
                         </button>
                     </div>
                 </section>
                 <!-- END app buttons -->
-                <section class="voice-input" :class="{ slideInUp:isVoiceMode}">
+                <section class="voice-input animated" :class="{slideInUp:isVoiceMode, visible:isVoiceMode, slideOutDown:!isVoiceMode}">
                 </section>
             </main>
+            </div>
         </div>
-    </div>
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="/js"></script>
-    <audio id="audio" src="/chime"></audio>
-    <script src="/public/script.js"></script>
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="/js"></script>
+        <audio id="audio" src="/chime"></audio>
+        <script src="/public/script.js"></script>
 </body>
 
 </html>
