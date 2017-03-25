@@ -91,11 +91,15 @@ img.card-icon {
 
 .card-time {
     position: absolute;
-    right: 0.4em;
+    right: 0.5em;
     top: 3em;
     color: white;
     opacity: 0.8;
     text-align: center;
+}
+
+.card-next-assignment .card-time {
+    right: 0.8em;
 }
 
 .time-hour {
