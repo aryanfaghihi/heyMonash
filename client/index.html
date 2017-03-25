@@ -20,6 +20,7 @@
 
 <div class="mdl-layout mdl-js-layout">
     <main class="mdl-layout__content">
+
         <!-- App header with profile cluster and Monash logo -->
         <section class="header">
             <div class="mdl-grid">
@@ -40,25 +41,32 @@
                 </div>
             </div>
         </section>
+        <!-- END header -->
+
         <!-- Cards section (main body of app, scrollable) -->
         <section class="cards">
             <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
+                    <!-- Next class card -->
                     <div class="mdl-card mdl-shadow--2dp card-next-class">
                         <div class="card-content-main">
                             <div class="mdl-card__title">
+                                <!-- Next class icon -->
                                 <img class="card-icon" src="img/icons/class.png">
+                                <!-- Next class heading -->
                                 <span class="card-title">
                                         Upcoming Class
                                         <br>
                                         <span class="card-subtitle">FIT3003 - Lecture</span>
                                     </span>
                             </div>
+                            <!-- Next class time -->
                             <div class="card-time">
                                 <span class="time-hour">2:00</span>
                                 <br>
                                 <span class="time-period">PM</span>
                             </div>
+                            <!-- Next class actions -->
                             <div class="mdl-card__actions">
                                 <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                     View on Moodle
@@ -69,10 +77,13 @@
                             </div>
                         </div>
                     </div>
+                    <!-- END Next class card -->
                 </div>
             </div>
         </section>
+        <!-- END cards -->
 
+        <!-- App buttons for mic and AR -->
         <section class="buttons">
             <!--Microphone button-->
             <div class="mic" onclick="startButton(event)">
@@ -82,6 +93,7 @@
                 </button>
             </div>
         </section>
+        <!-- END app buttons -->
 
         <section class="voice-input">
 
