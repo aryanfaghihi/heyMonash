@@ -69,6 +69,13 @@ img.monash-logo {
     background-image: -webkit-linear-gradient(right, #FFEB3B, #FFEB3B 20%, transparent 20%, transparent 100%)
 }
 
+.card-next-meeting {
+    width: 100%;
+    min-height: 0;
+    background-image: linear-gradient(right, #FFEB3B, #FFEB3B 20%, transparent 20%, transparent 100%);
+    background-image: -webkit-linear-gradient(right, #FFEB3B, #FFEB3B 20%, transparent 20%, transparent 100%)
+}
+
 .card-ar {
     width: 100%;
     min-height: 0;
@@ -142,6 +149,12 @@ section.cards {
     color: black;
 }
 
+.card-next-meeting .card-time {
+    right: 1em;
+    color: black;
+    top: 5em;
+}
+
 .time-hour {
     font-size: 1.6em;
 }
@@ -159,6 +172,7 @@ section.cards {
     background: #fafafa;
     font-size: 18px;
     line-height: 24px;
+    visibility: hidden;
 }
 
 .visible {
@@ -180,7 +194,7 @@ section.cards {
 #mic-button {
     background: #2196f3;
 }
-.day-of-week {
+.body-text-dark {
     font-weight: bold;
     color: black;
     margin-left: 0.5em;
@@ -249,4 +263,14 @@ section.cards {
     color: #FFEB3B;
     font-size: 2em;
     margin-right: 0.5em;
+}
+
+.card-next-meeting .card-title-icon {
+    color: #FFEB3B;
+    font-size: 2em;
+    margin-right: 0.5em;
+}
+
+.card-next-meeting .body-text-light {
+    margin-left: 0.5em;
 }
