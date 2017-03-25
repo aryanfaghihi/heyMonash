@@ -1,146 +1,163 @@
 <!doctype html>
-
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-
     <title>Hey Monash</title>
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="/css">
-
     <script src="/vue"></script>
     <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-
-<div id="vueApp">
-    <div class="mdl-layout mdl-js-layout">
-        <main class="mdl-layout__content">
-
-            <!-- App header with profile cluster and Monash logo -->
-            <section class="header">
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-phone">
-                        <!-- Profile cluster consisting of profile image and student name -->
-                        <div class="profile-cluster">
-                            <!-- Profile image -->
-                            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-                                <img src="img/profile.jpg">
-                            </button>
-                            <!-- Student name -->
-                            <span id="student-name-text">John Student</span>
+    <div id="vueApp">
+        <div class="mdl-layout mdl-js-layout">
+            <main class="mdl-layout__content">
+                <!-- App header with profile cluster and Monash logo -->
+                <section class="header">
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-phone">
+                            <!-- Profile cluster consisting of profile image and student name -->
+                            <div class="profile-cluster">
+                                <!-- Profile image -->
+                                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                                    <img src="img/profile.jpg">
+                                </button>
+                                <!-- Student name -->
+                                <span id="student-name-text">John Student</span>
+                            </div>
+                        </div>
+                        <!-- Monash logo -->
+                        <div style="text-align: right;" class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone">
+                            <img class="monash-logo" src="img/monash-logo.gif">
                         </div>
                     </div>
-                    <!-- Monash logo -->
-                    <div style="text-align: right;" class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone">
-                        <img class="monash-logo" src="img/monash-logo.gif">
-                    </div>
-                </div>
-            </section>
-            <!-- END header -->
-
-            <!-- Cards section (main body of app, scrollable) -->
-            <section class="cards">
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
-                        <!-- Next class card -->
-                        <div class="mdl-card mdl-shadow--2dp card-next-class">
-                            <div class="card-content-main">
-                                <div class="mdl-card__title">
-                                    <!-- Next class icon -->
-                                    <img class="card-icon" src="img/icons/class.png">
-                                    <!-- Next class heading -->
-                                    <span class="card-title">
+                </section>
+                <!-- END header -->
+                <!-- Cards section (main body of app, scrollable) -->
+                <section class="cards">
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
+                            <!-- Next class card -->
+                            <div class="mdl-card mdl-shadow--2dp card-next-class">
+                                <div class="card-content-main">
+                                    <div class="mdl-card__title">
+                                        <!-- Next class icon -->
+                                        <img class="card-icon" src="img/icons/class.png">
+                                        <!-- Next class heading -->
+                                        <span class="card-title">
                                         Upcoming Class
                                         <br>
                                         <span class="card-subtitle">FIT3003 - Lecture</span>
-                                    </span>
-                            </div>
-                            <!-- Next class time -->
-                            <div class="card-time">
-                                <span class="time-hour">2:00</span>
-                                <br>
-                                <span class="time-period">PM</span>
-                            </div>
-                            <!-- Next class actions -->
-                            <div class="mdl-card__actions">
-                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                        </span>
+                                    </div>
+                                    <!-- Next class time -->
+                                    <div class="card-time">
+                                        <span class="time-hour">2:00</span>
+                                        <br>
+                                        <span class="time-period">PM</span>
+                                    </div>
+                                    <!-- Next class actions -->
+                                    <div class="mdl-card__actions">
+                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                     View on Moodle
                                 </a>
-                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                     View Map
                                 </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- END Next class card -->
-
-                    <!-- Opening hours card -->
-                    <div class="mdl-card mdl-shadow--2dp card-opening-hours">
-                        <div class="card-content-main">
-                            <div class="mdl-card__title">
-                                <!-- Opening hours icon -->
-                                <img class="card-icon" src="img/icons/clock.png">
-                                <!-- Opening hours heading -->
-                                <span class="card-title">
+                            <!-- END Next class card -->
+                            <!-- Opening hours card -->
+                            <div class="mdl-card mdl-shadow--2dp card-opening-hours">
+                                <div class="card-content-main">
+                                    <div class="mdl-card__title">
+                                        <!-- Opening hours icon -->
+                                        <img class="card-icon" src="img/icons/clock.png">
+                                        <!-- Opening hours heading -->
+                                        <span class="card-title">
                                         Opening Hours
                                         <br>
                                         <span class="card-subtitle">Hargrave-Andrew Library</span>
-                                    </span>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                <span class="day-of-week">Today</span>
-                                <span class="opening-time-range">7:00AM - 10:00PM</span>
-                            </div>
-                            <!-- Opening hours actions -->
-                            <div class="mdl-card__actions">
-                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                        </span>
+                                    </div>
+                                    <div class="mdl-card__supporting-text">
+                                        <span class="day-of-week">Today</span>
+                                        <span class="opening-time-range">7:00AM - 10:00PM</span>
+                                    </div>
+                                    <!-- Opening hours actions -->
+                                    <div class="mdl-card__actions">
+                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                     View Map
                                 </a>
-                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                     Visit Website
                                 </a>
+                                    </div>
+                                </div>
                             </div>
+                            <!-- END Opening hours card -->
+                            <!-- Next assignment card -->
+                            <div class="mdl-card mdl-shadow--2dp card-next-assignment">
+                                <div class="card-content-main">
+                                    <div class="mdl-card__title">
+                                        <!-- Next assignment icon -->
+                                        <img class="card-icon" src="img/icons/test_tube.png">
+                                        <!-- Next assignment heading -->
+                                        <span class="card-title">
+                                        Upcoming Assessment Task
+                                        <br>
+                                        <span class="card-subtitle">FIT3152 - Assignment 1</span>
+                                        </span>
+                                    </div>
+                                    <!-- Next assignment time -->
+                                    <div class="card-time">
+                                        <span class="time-hour">1</span>
+                                        <br>
+                                        <span class="time-period">APR</span>
+                                    </div>
+                                    <!-- Next assignment actions -->
+                                    <div class="mdl-card__actions">
+                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                    View on Moodle
+                                </a>
+                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                    Get Help
+                                </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Next assignment card -->
                         </div>
                     </div>
-                    <!-- END Opening hours card -->
-                </div>
-            </div>
-        </section>
-        <!-- END cards -->
-
-            <!-- App buttons for mic and AR -->
-            <section class="buttons">
-                <!--Microphone button-->
-                <div class="mic" onclick="startButton(event)">
-                    <button id="mic-button"
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored pulse-button">
-                        <i class="material-icons">mic</i>
-                    </button>
-                </div>
-            </section>
-            <!-- END app buttons -->
-
-            <section class="voice-input" :class="{ slideInUp:isVoiceMode}">
-
-            </section>
-        </main>
+                </section>
+                <!-- END cards -->
+                <!-- App buttons for mic and AR -->
+                <section class="buttons">
+                    <!--Microphone button-->
+                    <div class="mic" onclick="startButton(event)">
+                        <button id="mic-button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored pulse-button">
+                            <i class="material-icons">mic</i>
+                        </button>
+                    </div>
+                </section>
+                <!-- END app buttons -->
+                <section class="voice-input" :class="{ slideInUp:isVoiceMode}">
+                </section>
+            </main>
+        </div>
     </div>
-
-
-
-</div>
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="/js"></script>
-<audio id="audio" src="/chime"></audio>
-<script src="/public/script.js"></script>
-
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/js"></script>
+    <audio id="audio" src="/chime"></audio>
+    <script src="/public/script.js"></script>
 </body>
+
 </html>

@@ -56,6 +56,13 @@ img.monash-logo {
     background-image: -webkit-linear-gradient(right, #2196F3, #2196F3 20%, transparent 20%, transparent 100%)
 }
 
+.card-next-assignment {
+    width: 100%;
+    min-height: 0;
+    background-image: linear-gradient(right, #FF5722, #FF5722 15%, transparent 15%, transparent 100%);
+    background-image: -webkit-linear-gradient(right, #FF5722, #FF5722 15%, transparent 15%, transparent 100%)
+}
+
 .card-opening-hours {
     width: 100%;
     min-height: 0;
