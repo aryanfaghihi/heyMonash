@@ -45,7 +45,6 @@ img.monash-logo {
 .colour-bar {
     width: 50px;
     height: 50px;
-    /* height: 100%; */
     background-color: red;
 }
 
@@ -54,6 +53,39 @@ img.monash-logo {
     min-height: 0;
     background-image: linear-gradient(right, #2196F3, #2196F3 20%, transparent 20%, transparent 100%);
     background-image: -webkit-linear-gradient(right, #2196F3, #2196F3 20%, transparent 20%, transparent 100%)
+}
+
+.card-next-assignment {
+    width: 100%;
+    min-height: 0;
+    background-image: linear-gradient(right, #FF5722, #FF5722 20%, transparent 20%, transparent 100%);
+    background-image: -webkit-linear-gradient(right, #FF5722, #FF5722 20%, transparent 20%, transparent 100%)
+}
+
+.card-next-exam {
+    width: 100%;
+    min-height: 0;
+    background-image: linear-gradient(right, #FFEB3B, #FFEB3B 20%, transparent 20%, transparent 100%);
+    background-image: -webkit-linear-gradient(right, #FFEB3B, #FFEB3B 20%, transparent 20%, transparent 100%)
+}
+
+.card-ar {
+    width: 100%;
+    min-height: 0;
+    background-color: purple;
+}
+
+.card-ar .card-title {
+    color: white;
+}
+
+.card-ar .card-subtitle {
+    color: lightgrey;
+}
+
+.card-opening-hours {
+    width: 100%;
+    min-height: 0;
 }
 
 .card-content-main {
@@ -69,21 +101,45 @@ body {
 }
 
 section.buttons {
+    margin-top: 3em;
+    z-index: 100;
     bottom: 0;
-    position: absolute;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    background: -moz-linear-gradient(bottom,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+
 }
 
 img.card-icon {
     margin-right: 0.5em;
 }
 
+section.cards {
+    margin-top: -1em;
+    margin-bottom: 4em;
+}
+
 .card-time {
     position: absolute;
-    right: 0.4em;
+    right: 0.5em;
     top: 3em;
     color: white;
     opacity: 0.8;
     text-align: center;
+}
+
+.card-next-assignment .card-time {
+    right: 0.9em;
+}
+
+.card-next-exam .card-time {
+    right: 1em;
+    color: black;
 }
 
 .time-hour {
@@ -92,4 +148,82 @@ img.card-icon {
 
 .mdl-card {
     margin-bottom: 1em;
+}
+
+.voice-input {
+    z-index:999;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 730px;
+    background: #fafafa;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.mic-voice-mode, .mic {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.material-icons {
+    z-index: 10;
+    color: white;
+}
+
+#mic-button {
+    background: #2196f3;
+}
+.day-of-week {
+    font-weight: bold;
+    color: black;
+    margin-left: 0.5em;
+    margin-right: 2em;
+}
+
+.ar-icon {
+    position: absolute;
+    right: 1em;
+}
+
+
+.bubble-question {
+    background-color: rgb(68,138,255);
+    border-radius: 10px;
+    padding: 0.7em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: white;
+    transition: opacity 1s;
+    width: 70%;
+    margin: 10px 10px 10px auto;
+
+}
+
+.bubble-response {
+    background-color: grey;
+    border-radius: 10px;
+    padding: 0.7em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: white;
+    transition: opacity 1s;
+    width: 70%;
+    margin: 10px auto 10px 10px;
+}
+
+.close-voice-mode {
+    color: black;
+    font-size: 2.5rem;
+    padding: 10px;
+}
+
+.transparent-bg {
+    background: transparent;
 }
