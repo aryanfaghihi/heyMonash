@@ -69,6 +69,20 @@ img.monash-logo {
     background-image: -webkit-linear-gradient(right, #FFEB3B, #FFEB3B 20%, transparent 20%, transparent 100%)
 }
 
+.card-ar {
+    width: 100%;
+    min-height: 0;
+    background-color: purple;
+}
+
+.card-ar .card-title {
+    color: white;
+}
+
+.card-ar .card-subtitle {
+    color: lightgrey;
+}
+
 .card-opening-hours {
     width: 100%;
     min-height: 0;
@@ -168,4 +182,9 @@ section.cards {
     color: black;
     margin-left: 0.5em;
     margin-right: 2em;
+}
+
+.ar-icon {
+    position: absolute;
+    right: 1em;
 }
