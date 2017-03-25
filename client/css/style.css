@@ -225,9 +225,28 @@ section.cards {
 
 .transparent-bg {
     background: transparent;
+}
 
-.card-title-icon {
+.card-next-class .card-title-icon {
     color: #2196F3;
     font-size: 2em;
     margin-right: 0.5em;
+}
 
+.card-opening-hours .card-title-icon {
+    color: black;
+    font-size: 2em;
+    margin-right: 0.5em;
+}
+
+.card-next-assignment .card-title-icon {
+    color: #FF5722;
+    font-size: 2em;
+    margin-right: 0.5em;
+}
+
+.card-next-exam .card-title-icon {
+    color: #FFEB3B;
+    font-size: 2em;
+    margin-right: 0.5em;
+}
