@@ -25,6 +25,7 @@ router.get('/chime', function (req, res) {
 });
 
 app.use("/img", express.static(path.join(__dirname, 'client/img')));
+app.use("/public", express.static(path.join(__dirname, 'client')));
 
 
 api.get('/ask/:query', function (req, res) {
