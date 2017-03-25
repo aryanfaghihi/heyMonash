@@ -88,8 +88,7 @@ body {
 }
 
 section.buttons {
-    bottom: 0;
-    position: absolute;
+    margin-top: 3em;
 }
 
 img.card-icon {
@@ -135,8 +134,6 @@ img.card-icon {
 .visible {
     visibility: visible;
 }
-
-
 
 .day-of-week {
     font-weight: bold;
