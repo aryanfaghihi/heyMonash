@@ -192,7 +192,6 @@ section.cards {
     right: 1em;
 }
 
-
 .bubble-question {
     background-color: rgb(68,138,255);
     border-radius: 10px;
@@ -226,4 +225,9 @@ section.cards {
 
 .transparent-bg {
     background: transparent;
-}
+
+.card-title-icon {
+    color: #2196F3;
+    font-size: 2em;
+    margin-right: 0.5em;
+
