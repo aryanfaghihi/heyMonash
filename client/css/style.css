@@ -76,3 +76,16 @@ section.buttons {
 img.card-icon {
     margin-right: 0.5em;
 }
+
+.card-time {
+    position: absolute;
+    right: 0.4em;
+    top: 3em;
+    color: white;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.time-hour {
+    font-size: 1.6em;
+}
