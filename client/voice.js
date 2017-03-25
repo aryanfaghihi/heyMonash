@@ -48,7 +48,7 @@ conversation = {
         }
         conversationDiv.appendChild(newResponseDiv);
         updateScroll();
-    },
+    }
     // debuggingQuestionHistory: [],
 
     // isQuestionLegit: function(question) {

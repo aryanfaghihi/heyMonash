@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var path = require('path');
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -16,9 +17,16 @@ router.get('/js', function (req, res) {
 router.get('/css', function (req, res) {
     res.sendfile('./client/css/style.css');
 });
+router.get('/vue', function (req, res) {
+    res.sendfile('./client/libs/vue.js');
+});
 router.get('/chime', function (req, res) {
     res.sendfile('./client/chime.ogg');
 });
+
+app.use("/img", express.static(path.join(__dirname, 'client/img')));
+
+
 api.get('/ask/:query', function (req, res) {
     console.log(req.params.query);
     var inputQuery = req.params.query.toLowerCase();
