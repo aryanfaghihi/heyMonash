@@ -72,3 +72,7 @@ section.buttons {
     bottom: 0;
     position: absolute;
 }
+
+img.card-icon {
+    margin-right: 0.5em;
+}
