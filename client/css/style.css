@@ -67,3 +67,8 @@ body {
 .card-subtitle {
     color: grey;
 }
+
+section.buttons {
+    bottom: 0;
+    position: absolute;
+}
