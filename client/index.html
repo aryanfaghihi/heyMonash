@@ -33,7 +33,7 @@
                                 <img src="img/profile.jpg">
                             </button>
                             <!-- Student name -->
-                            <span id="student-name-text">John Student</span>
+                            <span id="student-name-text">Jane Student</span>
                         </div>
                     </div>
                     <!-- Monash logo -->
@@ -60,25 +60,25 @@
                                         <br>
                                         <span class="card-subtitle">FIT3003 - Lecture</span>
                                     </span>
-                            </div>
-                            <!-- Next class time -->
-                            <div class="card-time">
-                                <span class="time-hour">2:00</span>
-                                <br>
-                                <span class="time-period">PM</span>
-                            </div>
-                            <!-- Next class actions -->
-                            <div class="mdl-card__actions">
-                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                                    View on Moodle
-                                </a>
-                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                                    View Map
-                                </a>
+                                </div>
+                                <!-- Next class time -->
+                                <div class="card-time">
+                                    <span class="time-hour">2:00</span>
+                                    <br>
+                                    <span class="time-period">PM</span>
+                                </div>
+                                <!-- Next class actions -->
+                                <div class="mdl-card__actions">
+                                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                        View on Moodle
+                                    </a>
+                                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                        View Map
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- END Next class card -->
+                        <!-- END Next class card -->
 
                     <!-- Opening hours card -->
                     <div class="mdl-card mdl-shadow--2dp card-opening-hours">
@@ -117,7 +117,7 @@
             <!-- App buttons for mic and AR -->
             <section class="buttons">
                 <!--Microphone button-->
-                <div class="mic" onclick="startButton(event)">
+                <div class="mic" onclick="startButton(event)" @click="isVoiceMode=!isVoiceMode">
                     <button id="mic-button"
                             class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored pulse-button">
                         <i class="material-icons">mic</i>
@@ -126,12 +126,12 @@
             </section>
             <!-- END app buttons -->
 
-            <section class="voice-input" :class="{slideInUp:isVoiceMode}">
-                
+            <section class="voice-input animated" :class="{slideInUp:isVoiceMode, visible:isVoiceMode, slideOutDown:!isVoiceMode}">
+
             </section>
+
         </main>
     </div>
-
 
 
 </div>

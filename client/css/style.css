@@ -99,6 +99,22 @@ img.card-icon {
     margin-bottom: 1em;
 }
 
+.voice-input {
+    z-index:999;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 400px;
+    background: red;
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+
+
 .day-of-week {
     font-weight: bold;
     color: black;

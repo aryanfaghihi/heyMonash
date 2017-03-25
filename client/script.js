@@ -9,13 +9,8 @@ var vue = new Vue({
 });
 
 
-var addQuestion = function (question) {
-    // var addQuestion = this.isQuestionLegit(question);
-    // if (addQuestion.condition) {
-    this.history.push({
-        question: question,
-        response: ''
-    });
+function addQuestion (question) {
+
     ask_server(final_transcript);
     recognition.stop();
     var index = this.history.length;
@@ -28,7 +23,6 @@ function ask_server(query) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            // handleResponse(this.responseText);
             console.log(this.responseText);
         }
     };
@@ -101,6 +95,7 @@ else {
             if (event.results[i].isFinal) {
                 final_transcript += event.results[i][0].transcript;
                 console.log(final_transcript);
+                addQuestion(final_transcript);
             } else {
                 interim_transcript += event.results[i][0].transcript;
             }
