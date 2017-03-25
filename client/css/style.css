@@ -112,6 +112,7 @@ section.buttons {
     background: -webkit-linear-gradient(bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
     background: linear-gradient(to top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+
 }
 
 img.card-icon {
@@ -152,11 +153,10 @@ section.cards {
 .voice-input {
     z-index:999;
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
-    height: 400px;
+    height: 730px;
     background: #fafafa;
-    visibility: hidden;
 }
 
 .visible {
@@ -188,4 +188,36 @@ section.cards {
 .ar-icon {
     position: absolute;
     right: 1em;
+}
+
+
+.bubble-question {
+    background-color: rgb(68,138,255);
+    border-radius: 10px;
+    padding: 0.7em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: white;
+    transition: opacity 1s;
+    width: 70%;
+    margin: 10px 10px 10px auto;
+
+}
+
+.bubble-response {
+    background-color: grey;
+    border-radius: 10px;
+    padding: 0.7em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: white;
+    transition: opacity 1s;
+    width: 70%;
+    margin: 10px auto 10px 10px;
+}
+
+.close-voice-mode {
+    color: black;
+    font-size: 2.5rem;
+    padding: 10px;
 }

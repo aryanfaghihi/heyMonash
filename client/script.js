@@ -9,21 +9,21 @@ var vue = new Vue({
 });
 
 
-function addQuestion (question) {
-
+function addQuestion(question) {
+    vue.voice.conversations[vue.voice.conversations.length - 1].data = question;
     ask_server(final_transcript);
     recognition.stop();
-    var index = this.history.length;
-    this.createQuestionBubble(question, index);
-    updateScroll();
-    // }
 }
 
 function ask_server(query) {
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             console.log(this.responseText);
+            vue.voice.conversations.push({
+                type: 'a',
+                data: this.responseText
+            });
         }
     };
     xhttp.open("GET", "/api/ask/" + query, true);
@@ -44,6 +44,11 @@ else {
 
     recognition.onstart = function () {
         recognizing = true;
+        vue.voice.conversations.push({
+            type: 'q',
+            data: 'Ask a question'
+        });
+
         // var conversationDiv = document.getElementById('conversation');
         // var ongoingQuestionDiv = document.createElement("div");
         // ongoingQuestionDiv.id = "ongoingQuestionDiv";
@@ -97,6 +102,8 @@ else {
                 addQuestion(final_transcript);
             } else {
                 interim_transcript += event.results[i][0].transcript;
+                console.log(interim_transcript);
+                vue.voice.conversations[vue.voice.conversations.length - 1].data = interim_transcript;
             }
         }
     };
@@ -115,7 +122,12 @@ function startButton(event) {
     recognition.start();
     ignore_onend = false;
     start_timestamp = event.timeStamp;
-    updateScroll();
+    // updateScroll();
+}
+
+function playChime() {
+    var audio = document.getElementById("audio");
+    audio.play();
 }
 
 
