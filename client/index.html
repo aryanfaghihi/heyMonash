@@ -1,13 +1,16 @@
 <!doctype html>
-<html lang="en">
 
+<html lang="en">
 <head>
     <meta charset="utf-8">
+
     <title>Hey Monash</title>
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="/css">
+
     <script src="/vue"></script>
     <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -178,7 +181,20 @@
                 </section>
                 <!-- END app buttons -->
                 <section class="voice-input animated" :class="{slideInUp:isVoiceMode, visible:isVoiceMode, slideOutDown:!isVoiceMode}">
+
+                    <div v-for="conv in voice.conversation">
+
+                    </div>
+
+                    <div class="mic-voice-mode" onclick="startButton(event)">
+                        <button id="mic-button"
+                                class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored pulse-button">
+                            <i class="material-icons">mic</i>
+                        </button>
+
+                    </div>
                 </section>
+
             </main>
             </div>
         </div>
@@ -189,5 +205,4 @@
         <audio id="audio" src="/chime"></audio>
         <script src="/public/script.js"></script>
 </body>
-
 </html>

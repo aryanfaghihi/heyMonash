@@ -138,7 +138,7 @@ if (!('webkitSpeechRecognition' in window)) {
                     console.log(conversation);
                     console.log(final_transcript);
                 } else {
-                    interim_transcript += event.results[i][0].transcript;
+                    interim_transcript += event.resulmic-buttonts[i][0].transcript;
                 }
             }
             if (document.getElementById("ongoingQuestion")) {
