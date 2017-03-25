@@ -65,8 +65,22 @@ img.monash-logo {
 .card-next-exam {
     width: 100%;
     min-height: 0;
-    background-image: linear-gradient(right, #FFEB3B, #FFEB3B 20%, transparent 20%, transparent 100%);
-    background-image: -webkit-linear-gradient(right, #FFEB3B, #FFEB3B 20%, transparent 20%, transparent 100%)
+    background-image: linear-gradient(right, #ffdb00, #ffdb00 20%, transparent 20%, transparent 100%);
+    background-image: -webkit-linear-gradient(right, #ffdb00, #ffdb00 20%, transparent 20%, transparent 100%)
+}
+
+.card-next-meeting {
+    width: 100%;
+    min-height: 0;
+    background-image: linear-gradient(right, #ffdb00, #ffdb00 20%, transparent 20%, transparent 100%);
+    background-image: -webkit-linear-gradient(right, #ffdb00, #ffdb00 20%, transparent 20%, transparent 100%)
+}
+
+.card-fees-due {
+    width: 100%;
+    min-height: 0;
+    background-image: linear-gradient(right, #FF5722, #FF5722 20%, transparent 20%, transparent 100%);
+    background-image: -webkit-linear-gradient(right, #FF5722, #FF5722 20%, transparent 20%, transparent 100%)
 }
 
 .card-ar {
@@ -125,12 +139,13 @@ section.cards {
 }
 
 .card-time {
-    position: absolute;
-    right: 0.5em;
-    top: 3em;
     color: white;
     opacity: 0.8;
     text-align: center;
+    margin-right: -27%;
+    width: 27%;
+    float: right;
+    margin-top: -9%;
 }
 
 .card-next-assignment .card-time {
@@ -140,6 +155,19 @@ section.cards {
 .card-next-exam .card-time {
     right: 1em;
     color: black;
+}
+
+.card-fees-due .card-time {
+    top: 4em;
+    right: 1em;
+    margin-top: 0;
+}
+
+.card-next-meeting .card-time {
+    right: 0.4em;
+    color: black;
+    top: 5em;
+    margin-top: 0;
 }
 
 .time-hour {
@@ -180,7 +208,7 @@ section.cards {
 #mic-button {
     background: #2196f3;
 }
-.day-of-week {
+.body-text-dark {
     font-weight: bold;
     color: black;
     margin-left: 0.5em;
@@ -191,7 +219,6 @@ section.cards {
     position: absolute;
     right: 1em;
 }
-
 
 .bubble-question {
     background-color: rgb(68,138,255);
@@ -226,4 +253,44 @@ section.cards {
 
 .transparent-bg {
     background: transparent;
+}
+
+.card-next-class .card-title-icon {
+    color: #2196F3;
+    font-size: 2em;
+    margin-right: 0.5em;
+}
+
+.card-opening-hours .card-title-icon {
+    color: black;
+    font-size: 2em;
+    margin-right: 0.5em;
+}
+
+.card-next-assignment .card-title-icon {
+    color: #FF5722;
+    font-size: 2em;
+    margin-right: 0.5em;
+}
+
+.card-fees-due .card-title-icon {
+    color: #FF5722;
+    font-size: 2em;
+    margin-right: 0.5em;
+}
+
+.card-next-exam .card-title-icon {
+    color: #ffdb00;
+    font-size: 2em;
+    margin-right: 0.5em;
+}
+
+.card-next-meeting .card-title-icon {
+    color: #ffdb00;
+    font-size: 2em;
+    margin-right: 0.5em;
+}
+
+.card-next-meeting .body-text-light {
+    margin-left: 0.5em;
 }
