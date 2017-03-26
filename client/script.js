@@ -36,7 +36,7 @@ function handleServerResponse(serverRes) {
         });
         responsiveVoice.speak(serverRes);
     }
-    else if (serverRes.card = 'map') {
+    else if (serverRes.card === 'map') {
         vue.voice.conversations.push({
             type: 'z',
             isCard: true
