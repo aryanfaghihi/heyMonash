@@ -32,18 +32,6 @@ module.exports = {
         {
             keywords: {
                 required: [
-                    ""
-                ],
-                alternatives: [
-                    "printers",
-                    "printer"
-                ]
-            },
-            response: response.getMap()
-        },
-        {
-            keywords: {
-                required: [
                     "library",
                     "matheson"
                 ],
@@ -186,6 +174,18 @@ module.exports = {
 
             },
             response: response.getMail()
+        },
+        {
+            keywords: {
+                required: [
+                    ""
+                ],
+                alternatives: [
+                    "printers",
+                    "printer"
+                ]
+            },
+            response: response.getMap()
         }
 
     ]
