@@ -33,7 +33,8 @@ module.exports = {
             keywords: {
                 required: [
                     "map"
-                ]
+                ],
+                alternatives: []
             },
             response: response.getMap()
         },
@@ -58,7 +59,7 @@ module.exports = {
                         "mathesons",
                         "matheasons",
                         "matherson",
-                        "matho",
+                        "matho"
                     ]
                 ]
             },

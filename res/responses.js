@@ -87,9 +87,10 @@ module.exports = {
     },
     getMap: function() {
         var map = {
-            voice: '',
+            card: 'map',
             url: 'zappar://z/VZLa1c'
         }
+        return map;
     }
 
 }

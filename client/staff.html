@@ -162,6 +162,37 @@
                     <div v-if="conv.type=='a'" class="bubble-response animated slideInLeft"
                          :class="{'transparent-bg':conv.isCard}" v-html="conv.data">
                     </div>
+                    <div v-if="conv.type=='z'" class="bubble-response animated slideInLeft transparent-bg">
+                        <div class="mdl-card mdl-shadow--2dp card-opening-hours">
+                            <div class="card-content-main">
+                                <div class="mdl-card__title">
+                                    <!-- Opening hours icon -->
+                                    <!-- <img class="card-icon" src="img/icons/clock.png"> -->
+                                    <!--<i class="material-icons card-title-icon">schedule</i>-->
+                                    <!-- Opening hours heading -->
+                                    <span class="card-title">
+                                        Printers locations
+                                        <br>
+                                        <!--<span class="card-subtitle">Hargrave-Andrew Library</span>-->
+                                        </span>
+                                </div>
+                                <!--<div class="mdl-card__supporting-text">-->
+                                    <!--<span class="body-text-dark">Today</span>-->
+                                    <!--<span class="body-text-light">7:00AM - 10:00PM</span>-->
+                                <!--</div>-->
+                                <!-- Opening hours actions -->
+                                <div class="mdl-card__actions">
+                                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                                       href="zappar://z/VZLa1c">
+                                        View Map
+                                    </a>
+                                    <!--<a class="mdl-button mdl-button&#45;&#45;colored mdl-js-button mdl-js-ripple-effect">-->
+                                        <!--Visit Website-->
+                                    <!--</a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="mic-voice-mode" onclick="startButton(event)">
