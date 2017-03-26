@@ -82,8 +82,14 @@ module.exports = {
         var mail = {
             card: '<span class="mdl-badge" data-badge="4">Inbox</span>',
             voice: 'You have 4 new email messages'
-        }
+        };
         return mail
+    },
+    getMap: function() {
+        var map = {
+            voice: '',
+            url: 'zappar://z/VZLa1c'
+        }
     }
 
 }

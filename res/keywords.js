@@ -32,6 +32,14 @@ module.exports = {
         {
             keywords: {
                 required: [
+                    "map"
+                ]
+            },
+            response: response.getMap()
+        },
+        {
+            keywords: {
+                required: [
                     "library",
                     "matheson"
                 ],
@@ -100,9 +108,7 @@ module.exports = {
                     "pay"
                 ],
 
-                alternatives: [
-
-                ]
+                alternatives: []
             },
             response: response.getFeesPay()
 
@@ -152,10 +158,10 @@ module.exports = {
 
                 alternatives: [
                     [
-                    "due",
-                    "what",
-                    "how many"
-                        ]
+                        "due",
+                        "what",
+                        "how many"
+                    ]
                 ]
             },
             response: response.getAssign()
@@ -168,18 +174,17 @@ module.exports = {
 
                 alternatives: [
                     [
-                    "email",
-                    "how many",
-                    "do i"
+                        "email",
+                        "how many",
+                        "do i"
                     ]
                 ]
 
             },
-        response: response.getMail()
+            response: response.getMail()
         }
 
     ]
-
 
 
 };
