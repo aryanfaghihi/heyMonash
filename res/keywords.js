@@ -32,9 +32,12 @@ module.exports = {
         {
             keywords: {
                 required: [
-                    "map"
+                    ""
                 ],
-                alternatives: []
+                alternatives: [
+                    "printers",
+                    "printer"
+                ]
             },
             response: response.getMap()
         },
