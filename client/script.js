@@ -36,6 +36,9 @@ function handleServerResponse(serverRes) {
         });
         responsiveVoice.speak(serverRes);
     }
+    else if (serverRes.url) {
+        window.location = serverRes.url
+    }
     else {
         vue.voice.conversations.push({
             type: 'a',
